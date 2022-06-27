@@ -1,0 +1,16 @@
+{
+    "name": "UserControlSystem",
+    "rootNamespace": "",
+    "references": [
+        "GUID:f7cfa7bab3088844e847d097554b244f"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
