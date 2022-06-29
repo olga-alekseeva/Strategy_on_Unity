@@ -5,7 +5,6 @@ using UnityEngine;
         float MaxHealth { get; }
         Sprite Icon { get; }
         Material Material { get; }
-        void ChangeColour(Material material);
   
 }
 

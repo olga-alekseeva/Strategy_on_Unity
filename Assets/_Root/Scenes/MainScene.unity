@@ -4087,6 +4087,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1927735634}
     m_Modifications:
+    - target: {fileID: 490719020733028070, guid: 802068fafce60fb4c9d0384c0a8c994a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8cbdf22652f943545ac9ef16eb37cd0a, type: 2}
+    - target: {fileID: 732647828919908261, guid: 802068fafce60fb4c9d0384c0a8c994a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8cbdf22652f943545ac9ef16eb37cd0a, type: 2}
+    - target: {fileID: 2821392541124652489, guid: 802068fafce60fb4c9d0384c0a8c994a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8cbdf22652f943545ac9ef16eb37cd0a, type: 2}
     - target: {fileID: 3008856150792645629, guid: 802068fafce60fb4c9d0384c0a8c994a, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -4135,5 +4147,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Builder
       objectReference: {fileID: 0}
+    - target: {fileID: 4215164569246779638, guid: 802068fafce60fb4c9d0384c0a8c994a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8cbdf22652f943545ac9ef16eb37cd0a, type: 2}
+    - target: {fileID: 4528759497964497768, guid: 802068fafce60fb4c9d0384c0a8c994a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8cbdf22652f943545ac9ef16eb37cd0a, type: 2}
+    - target: {fileID: 4667619097229548546, guid: 802068fafce60fb4c9d0384c0a8c994a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8cbdf22652f943545ac9ef16eb37cd0a, type: 2}
+    - target: {fileID: 8342861598819775393, guid: 802068fafce60fb4c9d0384c0a8c994a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8cbdf22652f943545ac9ef16eb37cd0a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 802068fafce60fb4c9d0384c0a8c994a, type: 3}
