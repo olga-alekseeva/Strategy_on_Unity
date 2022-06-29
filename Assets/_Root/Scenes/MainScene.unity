@@ -1213,24 +1213,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3008856150792645629, guid: 802068fafce60fb4c9d0384c0a8c994a, type: 3}
   m_PrefabInstance: {fileID: 7868494480569677778}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &675991693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 675991691}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 0
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 2
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
 --- !u!1 &678919353
 GameObject:
   m_ObjectHideFlags: 0
@@ -3203,6 +3185,8 @@ MonoBehaviour:
   _sliderBackground: {fileID: 137346181}
   _sliderFillImage: {fileID: 376816652}
   _selectedValue: {fileID: 11400000, guid: 103b7fc7ebbc70349852afaf1610d44e, type: 2}
+  _selectedMaterial: {fileID: 2100000, guid: 8cbdf22652f943545ac9ef16eb37cd0a, type: 2}
+  _unselectedMaterial: {fileID: 2100000, guid: bc3dfee742406084ea3f4510bb2cfb5a, type: 2}
 --- !u!1001 &1907398211
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3642,6 +3626,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 1000
   _icon: {fileID: 21300000, guid: b8bb23a142034df4588c13fd48995ef0, type: 3}
+  _material: {fileID: 2100000, guid: 8cbdf22652f943545ac9ef16eb37cd0a, type: 2}
   _unitPrefab: {fileID: 675991691}
   _unitsParent: {fileID: 1927735634}
 --- !u!1001 &2138479782
@@ -3822,6 +3807,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1289188612}
     m_Modifications:
+    - target: {fileID: 2694326073835433285, guid: d6c9c7284471b6f4cba30a50b6415295, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8cbdf22652f943545ac9ef16eb37cd0a, type: 2}
     - target: {fileID: 3196068355872454380, guid: d6c9c7284471b6f4cba30a50b6415295, type: 3}
       propertyPath: m_Name
       value: Tower

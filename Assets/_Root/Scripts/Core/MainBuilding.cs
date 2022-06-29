@@ -18,11 +18,11 @@ using UnityEngine;
             Random.Range(-10, 10)), Quaternion.identity, _unitsParent);
         }
 
-    public void ChangeColour()
-    {
+        public void ChangeColour(Material material)
+        {
         GetComponent<Renderer>().material.color = _material.color;
-        _material.color = Color.white;
-    }
+        _material.color = Color.green;
+        }
 
 
     }
