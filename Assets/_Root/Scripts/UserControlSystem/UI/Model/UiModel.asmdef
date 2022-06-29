@@ -1,7 +1,9 @@
 {
-    "name": "Abstractions",
+    "name": "UiModel",
     "rootNamespace": "",
-    "references": [],
+    "references": [
+        "GUID:f7cfa7bab3088844e847d097554b244f"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

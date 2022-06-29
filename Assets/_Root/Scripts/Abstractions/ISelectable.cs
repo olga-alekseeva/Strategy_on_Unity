@@ -1,11 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
-public interface ISelecatable 
-{
+ public interface ISelectable 
+ {
         float Health { get; }
         float MaxHealth { get; }
         Sprite Icon { get; }
-    
+        Material Material { get; }
+        void ChangeColour();
+
 }
+
