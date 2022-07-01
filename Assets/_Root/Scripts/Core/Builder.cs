@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Builder : MonoBehaviour, ISelectable, IChangeColour
+public class Builder : MonoBehaviour, ISelectable
 {
-    [SerializeField] private float _maxHealth = 1000;
+    [SerializeField] private float _maxHealth = 100;
     [SerializeField] private Sprite _icon;
     [SerializeField] private Material _material;
-    private float _health = 1000;
+    private float _health = 100;
     public float Health => _health;
 
     public float MaxHealth => _maxHealth;
@@ -15,9 +15,4 @@ public class Builder : MonoBehaviour, ISelectable, IChangeColour
     public Sprite Icon => _icon;
 
     public Material Material => _material;
-
-    public void ChangeColour()
-    {
-        throw new System.NotImplementedException();
-    }
 }

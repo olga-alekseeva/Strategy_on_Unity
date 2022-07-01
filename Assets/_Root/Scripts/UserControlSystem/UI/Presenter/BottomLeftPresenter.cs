@@ -29,16 +29,11 @@ public class BottomLeftPresenter : MonoBehaviour
             _healthSlider.minValue = 0;
             _healthSlider.maxValue = selected.MaxHealth;
             _healthSlider.value = selected.Health;
-            _selectedMaterial.color = selected.Material.color;
-            _selectedMaterial.color = Color.green;
             var sliderColor = Color.Lerp(Color.red, Color.green, selected.Health /
                 (float)selected.MaxHealth);
             _sliderBackground.color = sliderColor * 0.5f;
             _sliderFillImage.color = sliderColor;
         }
-        if (selected == null)
-        {
-            _selectedMaterial.color = _unselectedMaterial.color;
-        }
+        
     }
 }

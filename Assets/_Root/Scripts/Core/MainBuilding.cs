@@ -1,6 +1,6 @@
 using UnityEngine;
 
-    public class MainBuilding : MonoBehaviour, IUnitProducer, ISelectable, IChangeColour
+    public class MainBuilding : MonoBehaviour, IUnitProducer, ISelectable
     {
         [SerializeField] private float _maxHealth = 1000;
         [SerializeField] private Sprite _icon;
@@ -17,10 +17,5 @@ using UnityEngine;
             Instantiate(_unitPrefab, new Vector3(Random.Range(-10, 10), 0,
             Random.Range(-10, 10)), Quaternion.identity, _unitsParent);
         }
-
-    public void ChangeColour()
-    {
-        throw new System.NotImplementedException();
-    }
 }
 
