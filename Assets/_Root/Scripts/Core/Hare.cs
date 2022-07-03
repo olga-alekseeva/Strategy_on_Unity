@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Builder : MonoBehaviour, ISelectable
+public class Hare : CommandExecutorBase<IMoveCommand>, ISelectable
 {
     [SerializeField] private float _maxHealth = 100;
     [SerializeField] private Sprite _icon;
@@ -15,4 +15,9 @@ public class Builder : MonoBehaviour, ISelectable
     public Sprite Icon => _icon;
 
     public Material Material => _material;
+
+    public override void ExecuteSpecificCommand(IMoveCommand command)
+    { 
+
+    }
 }

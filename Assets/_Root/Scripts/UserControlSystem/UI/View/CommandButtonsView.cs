@@ -28,11 +28,19 @@ public class CommandButtonsView : MonoBehaviour
         _buttonsByExecutorType
             .Add(typeof(CommandExecutorBase<IProduceUnitCommand>), _produceUnitButton);
     }
-    public void MakeLayout(IEnumerable<ICommandExecutor> commandExecutors)
+    public void MakeLayout(List<ICommandExecutor> commandExecutors)
     {
         foreach (var currentExecutor in commandExecutors)
         {
-            var buttonGameObject = _buttonsByExecutorType.Where(type => type.Key.IsAssignableFrom(currentExecutor.GetType())).First().Value; buttonGameObject.SetActive(true); var button = buttonGameObject.GetComponent<Button>(); button.onClick.AddListener(() => OnClick?.Invoke(currentExecutor));
+            var buttonGameObject = _buttonsByExecutorType
+                .Where(type => type
+                .Key.IsAssignableFrom(currentExecutor.GetType())
+                )
+                .First()
+                .Value; 
+            buttonGameObject.SetActive(true);
+            var button = buttonGameObject.GetComponent<Button>();
+            button.onClick.AddListener(() => OnClick?.Invoke(currentExecutor));
         }
     }
     public void Clear()
