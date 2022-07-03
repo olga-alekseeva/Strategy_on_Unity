@@ -1,7 +1,8 @@
+using Abstractions;
+using Abstractions.Commands;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using static Codice.CM.WorkspaceServer.WorkspaceTreeDataStore;
 
 public class CommandButtonsPresenter : MonoBehaviour
 {
@@ -35,13 +36,43 @@ public class CommandButtonsPresenter : MonoBehaviour
     private void onButtonClick(ICommandExecutor commandExecutor)
     {
         var unitProducer = commandExecutor as
-        CommandExecutorBase<IProduceUnitCommand>;
-if (unitProducer != null)
-{
+    CommandExecutorBase<IProduceUnitCommand>;
+        if (unitProducer != null)
+        {
            unitProducer.ExecuteSpecificCommand(_context.Inject(new ProduceUnitCommandHeir()));
             return;
         }
-        throw new
+        var moveCommand = commandExecutor as
+    CommandExecutorBase<IMoveCommand>;
+        if(moveCommand != null)
+        {
+            moveCommand.ExecuteSpecificCommand(_context.Inject(new MoveCommand()));
+            return;
+        }
+        var attackCommand = commandExecutor as 
+            CommandExecutorBase<IAttackCommand>;
+        if (attackCommand != null)
+        {
+            attackCommand.ExecuteSpecificCommand(_context.Inject(new AttackCommand()));
+            return;
+        }
+        var patrolComand = commandExecutor as
+            CommandExecutorBase<IPatrolCommand>;
+        if (patrolComand != null)
+        {
+            patrolComand.ExecuteSpecificCommand(_context.Inject(new PatrolCommand()));
+            return;
+        }
+        var stopCommand = commandExecutor as
+            CommandExecutorBase<IStopCommand>;
+        if (stopCommand != null)
+        {
+
+            stopCommand.ExecuteSpecificCommand(_context.Inject(new StopCommand()));
+            return;
+        }
+
+            throw new
         ApplicationException($"{nameof(CommandButtonsPresenter)}" +
         $".{nameof(onButtonClick)}:Unknown type of commands executor: { commandExecutor.GetType().FullName }!");
             

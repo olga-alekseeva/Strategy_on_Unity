@@ -6,8 +6,10 @@ public static class AssetsInjector
     public static T Inject<T>(this AssetsContext context, T target)
     {
         var targetType = target.GetType();
+        while (targetType != null)
+        {
 
-        var allFields = targetType.GetFields(BindingFlags.NonPublic | BindingFlags.Public
+            var allFields = targetType.GetFields(BindingFlags.NonPublic | BindingFlags.Public
         | BindingFlags.Instance);
 
         for (int i = 0; i < allFields.Length; i++)
@@ -23,6 +25,8 @@ public static class AssetsInjector
         injectAssetAttribute.AssetName);
             fieldInfo.SetValue(target, objectToInject);
         }
+        targetType = targetType.BaseType;
+        }    
         return target;
     }
 }

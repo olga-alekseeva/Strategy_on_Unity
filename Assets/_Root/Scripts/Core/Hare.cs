@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Abstractions.Commands;
+using Abstractions;
 
 public class Hare : CommandExecutorBase<IMoveCommand>, ISelectable
 {
@@ -17,7 +19,7 @@ public class Hare : CommandExecutorBase<IMoveCommand>, ISelectable
     public Material Material => _material;
 
     public override void ExecuteSpecificCommand(IMoveCommand command)
-    { 
-
+    {
+        Debug.Log("I move");
     }
 }
