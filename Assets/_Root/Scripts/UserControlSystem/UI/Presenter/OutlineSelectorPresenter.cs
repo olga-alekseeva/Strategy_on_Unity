@@ -1,4 +1,3 @@
-using Abstractions;
 using UnityEngine;
 
 public class OutlineSelectorPresenter : MonoBehaviour

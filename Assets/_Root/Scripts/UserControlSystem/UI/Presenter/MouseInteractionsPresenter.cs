@@ -1,13 +1,13 @@
 using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using Abstractions;
 
 public class MouseInteractionsPresenter : MonoBehaviour
 {
+    [SerializeField] private EventSystem _eventSystem;
     [SerializeField] private Camera _camera;
     [SerializeField] private SelectableValue _selectedObject;
-    [SerializeField] private EventSystem _eventSystem;
+
     [SerializeField] private Vector3Value _groundClicksRMB;
     [SerializeField] private Transform _groundTransform;
     private Plane _groundPlane;
@@ -37,11 +37,11 @@ public class MouseInteractionsPresenter : MonoBehaviour
                 return;
             }
             var selectable = hits
-            .Select(hit => hit.collider.GetComponentInParent<ISelectable>())
+            .Select(hit => 
+            hit.collider.GetComponentInParent<ISelectable>())
             .Where(c => c != null)
             .FirstOrDefault();
             _selectedObject.SetValue(selectable);
-
         }
         else
         {

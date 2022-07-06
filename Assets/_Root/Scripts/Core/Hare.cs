@@ -1,9 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Abstractions.Commands;
-using Abstractions;
-
 public class Hare :MonoBehaviour, ISelectable
 {
     [SerializeField] private float _maxHealth = 100;
