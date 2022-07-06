@@ -7,12 +7,13 @@ namespace UI.Model.CommandCreators
         CommandCreatorBase<IAttackCommand>
 
     {
+        private IAttackable _target;
         [Inject] private AssetsContext _context;
         protected override void
         classSpecificCommandCreation(Action<IAttackCommand> creationCallback)
         {
             creationCallback?.Invoke(_context.Inject(new
-            AttackCommand()));
+            AttackCommand(_target)));
         }
     }
 }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-    public class MainBuilding : CommandExecutorBase<IProduceUnitCommand>, ISelectable
+    public class MainBuilding : CommandExecutorBase<IProduceUnitCommand>, ISelectable, IAttackable
     {
         [SerializeField] private float _maxHealth = 1000;
         [SerializeField] private Sprite _icon;

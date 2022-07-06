@@ -1,5 +1,5 @@
 using UnityEngine;
-public class Hare :MonoBehaviour, ISelectable
+public class Hare :MonoBehaviour, ISelectable, IAttackable
 {
     [SerializeField] private float _maxHealth = 100;
     [SerializeField] private Sprite _icon;
