@@ -1,18 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using System;
+using Zenject;
 
-public class ProduceUnitCommandCommandCreator : MonoBehaviour
+namespace UI.Model.CommandCreators
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public class ProduceUnitCommandCommandCreator : 
+    CommandCreatorBase<IProduceUnitCommand>
+{
+    [Inject] private AssetsContext _context;
+    protected override void
+    classSpecificCommandCreation(Action<IProduceUnitCommand> creationCallback)
     {
-        
+        creationCallback?.Invoke(_context.Inject(new
+        ProduceUnitCommandHeir()));
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+}
 }

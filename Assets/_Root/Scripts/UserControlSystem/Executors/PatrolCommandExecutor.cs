@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PatrolCommandExecutor : CommandExecutorBase<IPatrolCommand>
@@ -9,3 +7,4 @@ public class PatrolCommandExecutor : CommandExecutorBase<IPatrolCommand>
         Debug.Log("I patrol");
     }
 }
+ 

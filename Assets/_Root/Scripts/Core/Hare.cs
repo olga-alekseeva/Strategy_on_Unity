@@ -4,7 +4,7 @@ using UnityEngine;
 using Abstractions.Commands;
 using Abstractions;
 
-public class Hare : CommandExecutorBase<IMoveCommand>, ISelectable
+public class Hare :MonoBehaviour, ISelectable
 {
     [SerializeField] private float _maxHealth = 100;
     [SerializeField] private Sprite _icon;
@@ -17,9 +17,5 @@ public class Hare : CommandExecutorBase<IMoveCommand>, ISelectable
     public Sprite Icon => _icon;
 
     public Material Material => _material;
-
-    public override void ExecuteSpecificCommand(IMoveCommand command)
-    {
-        Debug.Log("I move");
-    }
+ 
 }

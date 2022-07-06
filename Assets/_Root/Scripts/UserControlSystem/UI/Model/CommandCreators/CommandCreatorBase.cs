@@ -1,5 +1,5 @@
 using System;
-public class CommandCreatorBase<T> where T: ICommand 
+public abstract class CommandCreatorBase<T> where T: ICommand 
 {
     public ICommandExecutor ProcessCommandExecutor(ICommandExecutor
  commandExecutor, Action<T> callback)
@@ -12,7 +12,6 @@ public class CommandCreatorBase<T> where T: ICommand
         }
         return commandExecutor;
     }
-    protected abstract void classSpecificCommandCreation(Action<T>
-    creationCallback);
+    protected abstract void classSpecificCommandCreation(Action<T> creationCallback);
     public virtual void ProcessCancel() { }
 }
