@@ -8,6 +8,7 @@ namespace UI.Model.CommandCreators
     CommandCreatorBase<IProduceUnitCommand>
 {
     [Inject] private AssetsContext _context;
+
     protected override void
     classSpecificCommandCreation(Action<IProduceUnitCommand> creationCallback)
     {

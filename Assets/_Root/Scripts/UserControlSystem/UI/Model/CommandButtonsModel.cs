@@ -53,6 +53,7 @@ namespace UI.Model
             _stopper.ProcessCancel();
             _mover.ProcessCancel();
             _patroller.ProcessCancel();
+
             OnCommandCancel?.Invoke();
 
         }
