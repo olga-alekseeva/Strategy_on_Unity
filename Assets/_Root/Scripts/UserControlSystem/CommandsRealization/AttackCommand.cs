@@ -1,3 +1,6 @@
+using Abstractions;
+using Abstractions.Commands.CommandInterfaces;
+
 public class AttackCommand : IAttackCommand
 {
     public IAttackable Target { get; }

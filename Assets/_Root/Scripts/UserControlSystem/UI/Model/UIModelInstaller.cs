@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
 using Zenject;
 using UI.Model.CommandCreators;
+using Utils.AssetsInjector;
+using Abstractions.Commands;
+using Abstractions.Commands.CommandInterfaces;
 
+namespace UserControlSystem.UI.Model
 
-namespace UI.Model
 {
     internal class UIModelInstaller : MonoInstaller
     {

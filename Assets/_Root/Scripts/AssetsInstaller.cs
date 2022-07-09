@@ -1,4 +1,6 @@
 using UnityEngine;
+using UserControlSystem.UI.Model;
+using Utils.AssetsInjector;
 using Zenject;
 
 [CreateAssetMenu(fileName = "AssetsInstaller", menuName = "Installers/AssetsInstaller")]

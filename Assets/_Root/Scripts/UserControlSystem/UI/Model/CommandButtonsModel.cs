@@ -1,7 +1,10 @@
-﻿using System;
+﻿using Abstractions.Commands;
+using Abstractions.Commands.CommandInterfaces;
+using System;
+using UI.Model.CommandCreators;
 using Zenject;
 
-namespace UI.Model
+namespace UserControlSystem.UI.Model
 {
     public class CommandButtonsModel
     {

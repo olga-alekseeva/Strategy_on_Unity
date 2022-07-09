@@ -1,5 +1,8 @@
 using System;
 
+namespace Utils.AssetsInjector
+{
+
 [AttributeUsage(AttributeTargets.Field)]
 public class InjectAssetAttribute : Attribute
 {
@@ -8,4 +11,5 @@ public class InjectAssetAttribute : Attribute
     {
         AssetName = assetName;
     }
+}
 }

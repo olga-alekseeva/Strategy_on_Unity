@@ -1,5 +1,8 @@
 using System;
 using System.Reflection;
+
+namespace Utils.AssetsInjector
+{
 public static class AssetsInjector
 {
     private static readonly Type _injectAssetAttributeType = typeof(InjectAssetAttribute);
@@ -29,6 +32,7 @@ public static class AssetsInjector
         }    
         return target;
     }
+}
 }
 
 

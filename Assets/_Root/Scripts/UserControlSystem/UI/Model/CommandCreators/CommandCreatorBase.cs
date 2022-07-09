@@ -1,17 +1,22 @@
+using Abstractions.Commands;
 using System;
-public abstract class CommandCreatorBase<T> where T: ICommand 
+
+namespace UI.Model.CommandCreators
 {
-    public ICommandExecutor ProcessCommandExecutor(ICommandExecutor
- commandExecutor, Action<T> callback)
+    public abstract class CommandCreatorBase<T> where T : ICommand
     {
-        var classSpecificExecutor = commandExecutor as 
-            CommandExecutorBase<T>;
-        if (classSpecificExecutor != null)
+        public ICommandExecutor ProcessCommandExecutor(ICommandExecutor
+     commandExecutor, Action<T> callback)
         {
-            classSpecificCommandCreation(callback);
+            var classSpecificExecutor = commandExecutor as
+                CommandExecutorBase<T>;
+            if (classSpecificExecutor != null)
+            {
+                classSpecificCommandCreation(callback);
+            }
+            return commandExecutor;
         }
-        return commandExecutor;
+        protected abstract void classSpecificCommandCreation(Action<T> creationCallback);
+        public virtual void ProcessCancel() { }
     }
-    protected abstract void classSpecificCommandCreation(Action<T> creationCallback);
-    public virtual void ProcessCancel() { }
 }

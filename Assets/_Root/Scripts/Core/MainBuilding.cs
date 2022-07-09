@@ -1,4 +1,9 @@
+using Abstractions;
+using Abstractions.Commands;
 using UnityEngine;
+
+namespace Core
+{
 
     public class MainBuilding : CommandExecutorBase<IProduceUnitCommand>, ISelectable, IAttackable
     {
@@ -23,5 +28,6 @@ using UnityEngine;
             (-10, 10), 0, Random.Range(-10, 10)), Quaternion.identity, _unitsParent); 
     }
 
+}
 }
 
