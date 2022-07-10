@@ -5,5 +5,5 @@ using Utils.AssetsInjector;
 public class ProduceUnitCommand : IProduceUnitCommand
 {
     public GameObject UnitPrefab => _unitPrefab;
-    [InjectAsset("Hare")] private GameObject _unitPrefab;
+    [InjectAsset("SecondUnit")] private GameObject _unitPrefab;
 }
