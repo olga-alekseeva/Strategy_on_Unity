@@ -1,5 +1,7 @@
 using Abstractions.Commands;
 using UnityEngine;
+namespace Abstractions.Commands.CommandExecutors
+{
 
 public class PatrolCommandExecutor : CommandExecutorBase<IPatrolCommand>
 {
@@ -8,5 +10,6 @@ public class PatrolCommandExecutor : CommandExecutorBase<IPatrolCommand>
         Debug.Log($"{name} is moving from " +
             $"{command.From} to {command.To}!");
     }
+}
 }
  
