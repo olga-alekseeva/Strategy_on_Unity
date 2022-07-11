@@ -1,16 +1,14 @@
-using Abstractions.Commands;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using System.Threading;
 
 namespace Abstractions.Commands.CommandExecutors
 {
 
-public class StopCommandExecutor : CommandExecutorBase<IStopCommand>
-{
-    public override void ExecuteSpecificCommand(IStopCommand command)
+    public class StopCommandExecutor : CommandExecutorBase<IStopCommand>
     {
-        Debug.Log("Stop");
+        public CancellationTokenSource cancellationTokenSource { get; set; }
+        public override void ExecuteSpecificCommand(IStopCommand command)
+        {
+            cancellationTokenSource?.Cancel();
+        }
     }
-}
 }

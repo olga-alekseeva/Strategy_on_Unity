@@ -1,6 +1,6 @@
 using Abstractions;
 using UnityEngine;
-public class MainUnit :MonoBehaviour, ISelectable, IAttackable
+public class MainUnit : MonoBehaviour, ISelectable, IAttackable
 {
     [SerializeField] private int _maxHealth = 100;
     [SerializeField] private Sprite _icon;

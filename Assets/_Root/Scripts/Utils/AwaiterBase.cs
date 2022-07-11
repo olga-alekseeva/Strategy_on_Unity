@@ -1,23 +1,33 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 namespace Utils
 {
 
     public abstract class AwaiterBase<TAwaited> : IAwaiter<TAwaited>
     {
-        public bool IsCompleted => throw new NotImplementedException();
+        private TAwaited _result;
+        private bool _isCompleted;
+        private Action _continuation;
+        public bool IsCompleted => _isCompleted;
 
-        public TAwaited GetResult()
-        {
-            throw new NotImplementedException();
-        }
+        public TAwaited GetResult() => _result;
 
         public void OnCompleted(Action continuation)
         {
-            throw new NotImplementedException();
+            if (_isCompleted)
+            {
+                continuation?.Invoke();
+            }
+            else
+            {
+                _continuation = continuation;
+            }
+        }
+        protected void onWaitingResult(TAwaited result)
+        {
+            _isCompleted = true;
+            _result = result;
+            _continuation?.Invoke();
         }
     }
 }

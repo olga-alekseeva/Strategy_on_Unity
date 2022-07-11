@@ -1,8 +1,8 @@
+using Abstractions;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 using UserControlSystem.UI.Model;
-using Abstractions;
 
 public class BottomLeftPresenter : MonoBehaviour
 {
@@ -36,6 +36,6 @@ public class BottomLeftPresenter : MonoBehaviour
             _sliderBackground.color = sliderColor * 0.5f;
             _sliderFillImage.color = sliderColor;
         }
-        
+
     }
 }

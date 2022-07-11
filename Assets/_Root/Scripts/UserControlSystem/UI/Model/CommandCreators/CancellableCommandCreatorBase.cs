@@ -1,10 +1,10 @@
+using Abstractions.Commands;
 using System;
 using System.Threading;
 using UI.Model.CommandCreators;
-using Utils.AssetsInjector;
 using Utils;
+using Utils.AssetsInjector;
 using Zenject;
-using Abstractions.Commands;
 
 public abstract class CancellableCommandCreatorBase<TCommand, TArgument> :
 CommandCreatorBase<TCommand> where TCommand : ICommand

@@ -5,7 +5,7 @@ using Object = UnityEngine.Object;
 namespace Utils.AssetsInjector
 {
 
-[CreateAssetMenu(fileName = nameof(AssetsContext), menuName = "Strategy Game/" +
+    [CreateAssetMenu(fileName = nameof(AssetsContext), menuName = "Strategy Game/" +
 nameof(AssetsContext), order = 2)]
     public class AssetsContext : ScriptableObject
     {

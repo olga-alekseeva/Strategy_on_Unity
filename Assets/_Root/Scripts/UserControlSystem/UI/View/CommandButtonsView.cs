@@ -50,7 +50,7 @@ public class CommandButtonsView : MonoBehaviour
     {
         foreach (var currentExecutor in commandExecutors)
         {
-            var buttonGameObject = 
+            var buttonGameObject =
                 getButtonGameObjectByType(currentExecutor.GetType());
             buttonGameObject.SetActive(true);
             var button = buttonGameObject.GetComponent<Button>();

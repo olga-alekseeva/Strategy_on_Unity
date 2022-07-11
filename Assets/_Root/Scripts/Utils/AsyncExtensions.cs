@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 namespace Utils
 {
 
-    public static class AsyncExtensions 
+    public static class AsyncExtensions
     {
         public struct Void { }
         public static async Task<TResult> WithCancellation<TResult>(this Task<TResult>
@@ -21,7 +21,7 @@ namespace Utils
                 }
 
             }
-         return await originalTask;
+            return await originalTask;
         }
         public static Task<TResult> AsTask<TResult>(this IAwaitable<TResult> awaitable)
         {

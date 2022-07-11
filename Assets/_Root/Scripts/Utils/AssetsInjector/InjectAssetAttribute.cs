@@ -3,13 +3,13 @@ using System;
 namespace Utils.AssetsInjector
 {
 
-[AttributeUsage(AttributeTargets.Field)]
-public class InjectAssetAttribute : Attribute
-{
-    public readonly string AssetName;
-    public InjectAssetAttribute(string assetName = null)
+    [AttributeUsage(AttributeTargets.Field)]
+    public class InjectAssetAttribute : Attribute
     {
-        AssetName = assetName;
+        public readonly string AssetName;
+        public InjectAssetAttribute(string assetName = null)
+        {
+            AssetName = assetName;
+        }
     }
-}
 }

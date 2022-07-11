@@ -1,11 +1,9 @@
-using System;
-using System.Collections.Generic;
-using UnityEngine;
-using Zenject;
-using UI.Model;
-using UserControlSystem.UI.Model;
 using Abstractions;
 using Abstractions.Commands;
+using System.Collections.Generic;
+using UnityEngine;
+using UserControlSystem.UI.Model;
+using Zenject;
 
 public class CommandButtonsPresenter : MonoBehaviour
 {

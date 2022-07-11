@@ -6,53 +6,53 @@ using Utils;
 namespace Core
 {
 
-public class UnitMovementStop : MonoBehaviour, IAwaitable<AsyncExtensions.Void>
-{
-    public class StopAwaiter : IAwaiter<AsyncExtensions.Void>
+    public class UnitMovementStop : MonoBehaviour, IAwaitable<AsyncExtensions.Void>
     {
-        private readonly UnitMovementStop _unitMovementStop;
-        private Action _continuation;
-        private bool _isCompleted;
-        public StopAwaiter(UnitMovementStop unitMovementStop)
+        public class StopAwaiter : IAwaiter<AsyncExtensions.Void>
         {
-            _unitMovementStop = unitMovementStop;
-            _unitMovementStop.OnStop += onStop;
-        }
-        private void onStop()
-        {
-            _unitMovementStop.OnStop -= onStop;
-            _isCompleted = true; _continuation?.Invoke();
-        }
-        public void OnCompleted(Action continuation)
-        {
-            if (_isCompleted)
+            private readonly UnitMovementStop _unitMovementStop;
+            private Action _continuation;
+            private bool _isCompleted;
+            public StopAwaiter(UnitMovementStop unitMovementStop)
             {
-                continuation?.Invoke();
+                _unitMovementStop = unitMovementStop;
+                _unitMovementStop.OnStop += onStop;
             }
-            else
+            private void onStop()
             {
-                _continuation = continuation;
+                _unitMovementStop.OnStop -= onStop;
+                _isCompleted = true; _continuation?.Invoke();
             }
-        }
-        public bool IsCompleted => _isCompleted;
-        public AsyncExtensions.Void GetResult() => new AsyncExtensions.Void();
-    }
-    public event Action OnStop;
-    [SerializeField] private NavMeshAgent _agent;
-    void Update()
-    {
-        if (!_agent.pathPending)
-        {
-            if (_agent.remainingDistance <= _agent.stoppingDistance)
+            public void OnCompleted(Action continuation)
             {
-                if (!_agent.hasPath || _agent.velocity.sqrMagnitude == 0f)
+                if (_isCompleted)
                 {
-                    OnStop?.Invoke();
+                    continuation?.Invoke();
+                }
+                else
+                {
+                    _continuation = continuation;
+                }
+            }
+            public bool IsCompleted => _isCompleted;
+            public AsyncExtensions.Void GetResult() => new AsyncExtensions.Void();
+        }
+        public event Action OnStop;
+        [SerializeField] private NavMeshAgent _agent;
+        void Update()
+        {
+            if (!_agent.pathPending)
+            {
+                if (_agent.remainingDistance <= _agent.stoppingDistance)
+                {
+                    if (!_agent.hasPath || _agent.velocity.sqrMagnitude == 0f)
+                    {
+                        OnStop?.Invoke();
+                    }
                 }
             }
         }
+        public IAwaiter<AsyncExtensions.Void> GetAwaiter() => new StopAwaiter(this);
     }
-    public IAwaiter<AsyncExtensions.Void> GetAwaiter() => new StopAwaiter(this);
-}
 }
 
