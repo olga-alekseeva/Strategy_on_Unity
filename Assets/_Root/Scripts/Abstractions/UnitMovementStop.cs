@@ -3,9 +3,8 @@ using UnityEngine;
 using UnityEngine.AI;
 using Utils;
 
-namespace Core
+namespace Abstractions
 {
-
     public class UnitMovementStop : MonoBehaviour, IAwaitable<AsyncExtensions.Void>
     {
         public class StopAwaiter : IAwaiter<AsyncExtensions.Void>

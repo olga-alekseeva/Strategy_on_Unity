@@ -1,5 +1,5 @@
-using Core;
 using Utils;
+using Abstractions;
 
 public class StopAwaiter : AwaiterBase<AsyncExtensions.Void>
 {

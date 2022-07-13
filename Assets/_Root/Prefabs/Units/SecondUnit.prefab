@@ -1095,6 +1095,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _stop: {fileID: 3392164026998046743}
   _animator: {fileID: 2581137512726376445}
+  _stopCommandExecutor: {fileID: 4986460323474886805}
 --- !u!195 &4986460323474886806
 NavMeshAgent:
   m_ObjectHideFlags: 0
