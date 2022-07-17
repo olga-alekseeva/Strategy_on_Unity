@@ -30,6 +30,9 @@ namespace UserControlSystem.UI.Model
             .To<StopCommandCommandCreator>().AsTransient();
 
             Container.Bind<CommandButtonsModel>().AsTransient();
+            Container.Bind<float>().WithId("SecondUnit").FromInstance(5f);
+            Container.Bind<string>().WithId("SecondUnit").FromInstance("SecondUnit");
+
         }
 
     }
