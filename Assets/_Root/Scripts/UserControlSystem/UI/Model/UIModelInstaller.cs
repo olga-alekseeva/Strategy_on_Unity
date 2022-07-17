@@ -10,14 +10,10 @@ namespace UserControlSystem.UI.Model
 {
     internal class UIModelInstaller : MonoInstaller
     {
-        [SerializeField] private AssetsContext _legacyContext;
-        [SerializeField] private Vector3Value _vector3Value;
+        [SerializeField] private Sprite _secondUnitSprite;
 
         public override void InstallBindings()
         {
-            Container.Bind<AssetsContext>().FromInstance(_legacyContext);
-            Container.Bind<Vector3Value>().FromInstance(_vector3Value);
-
             Container.Bind<CommandCreatorBase<IProduceUnitCommand>>()
             .To<ProduceUnitCommandCommandCreator>().AsTransient();
             Container.Bind<CommandCreatorBase<IAttackCommand>>()
@@ -30,9 +26,12 @@ namespace UserControlSystem.UI.Model
             .To<StopCommandCommandCreator>().AsTransient();
 
             Container.Bind<CommandButtonsModel>().AsTransient();
+
             Container.Bind<float>().WithId("SecondUnit").FromInstance(5f);
             Container.Bind<string>().WithId("SecondUnit").FromInstance("SecondUnit");
+            Container.Bind<Sprite>().WithId("SecondUnit").FromInstance(_secondUnitSprite);
 
+            Container.Bind<BottomCenterModel>().AsSingle();
         }
 
     }

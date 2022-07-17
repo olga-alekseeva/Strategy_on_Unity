@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Core
 {
 
-    public class MainBuilding : CommandExecutorBase<IProduceUnitCommand>, ISelectable, IAttackable
+    public class MainBuilding : MonoBehaviour, ISelectable
     {
         [SerializeField] private int _maxHealth = 1000;
         [SerializeField] private Sprite _icon;
@@ -22,12 +22,7 @@ namespace Core
 
         int IHealthValue.MaxHealth => _maxHealth;
 
-        public override void ExecuteSpecificCommand(IProduceUnitCommand command)
-        {
-            Instantiate(command.UnitPrefab, new Vector3(Random.Range
-                (-10, 10), 0, Random.Range(-10, 10)), Quaternion.identity, _unitsParent);
-        }
-
+       
     }
 }
 

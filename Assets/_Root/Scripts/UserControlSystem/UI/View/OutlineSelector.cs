@@ -1,6 +1,9 @@
 using System.Linq;
 using UnityEngine;
 
+namespace UI.View
+{
+
 public class OutlineSelector : MonoBehaviour
 {
     [SerializeField] private MeshRenderer[] _renderers;
@@ -28,4 +31,5 @@ public class OutlineSelector : MonoBehaviour
         }
         _isSelectedCache = isSelected;
     }
+}
 }

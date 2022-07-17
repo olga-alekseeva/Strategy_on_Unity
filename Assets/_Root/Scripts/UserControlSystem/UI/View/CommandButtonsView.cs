@@ -6,6 +6,9 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
+namespace UI.View
+{
+
 public class CommandButtonsView : MonoBehaviour
 {
     public Action<ICommandExecutor> OnClick;
@@ -78,3 +81,4 @@ public class CommandButtonsView : MonoBehaviour
     }
 }
 
+}
