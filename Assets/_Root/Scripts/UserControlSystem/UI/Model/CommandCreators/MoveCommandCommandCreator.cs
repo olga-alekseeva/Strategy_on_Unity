@@ -1,12 +1,12 @@
 ﻿using Abstractions.Commands;
 using UnityEngine;
 
-namespace UI.Model.CommandCreators
+namespace UserControlSystem
 {
     public class MoveCommandCommandCreator :
        CancellableCommandCreatorBase<IMoveCommand, Vector3>
     {
-        protected override IMoveCommand createCommand(Vector3 argument) => new
+        protected override IMoveCommand CreateCommand(Vector3 argument) => new
         MoveCommand(argument);
     }
 }

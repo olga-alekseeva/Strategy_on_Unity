@@ -1,19 +1,19 @@
 ﻿using Abstractions.Commands;
+using Core;
 using System;
 using Utils.AssetsInjector;
 using Zenject;
 
-namespace UI.Model.CommandCreators
+namespace UserControlSystem
 {
     internal class StopCommandCommandCreator :
         CommandCreatorBase<IStopCommand>
     {
         [Inject] private AssetsContext _context;
         protected override void
-        classSpecificCommandCreation(Action<IStopCommand> creationCallback)
+        ClassSpecificCommandCreation(Action<IStopCommand> creationCallback)
         {
-            creationCallback?.Invoke(_context.Inject(new
-            StopCommand()));
+            creationCallback?.Invoke(_context.Inject(new StopCommand()));
         }
     }
 }

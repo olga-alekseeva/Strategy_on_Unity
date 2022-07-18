@@ -3,7 +3,7 @@ using System;
 using Utils.AssetsInjector;
 using Zenject;
 
-namespace UI.Model.CommandCreators
+namespace UserControlSystem
 {
 
     public class ProduceUnitCommandCommandCreator :
@@ -13,7 +13,7 @@ namespace UI.Model.CommandCreators
         [Inject] private DiContainer _diContainer;
 
         protected override void
-        classSpecificCommandCreation(Action<IProduceUnitCommand> creationCallback)
+        ClassSpecificCommandCreation(Action<IProduceUnitCommand> creationCallback)
         {
             var produceUnitCommand = _context.Inject(new ProduceUnitCommandHeir());
             _diContainer.Inject(produceUnitCommand);

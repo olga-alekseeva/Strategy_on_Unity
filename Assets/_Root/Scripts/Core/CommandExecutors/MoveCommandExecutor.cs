@@ -1,5 +1,5 @@
-using Abstractions;
 using System.Threading;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AI;
 using Utils;
@@ -11,7 +11,7 @@ namespace Abstractions.Commands.CommandExecutors
         [SerializeField] private UnitMovementStop _stop;
         [SerializeField] private Animator _animator;
         [SerializeField] private StopCommandExecutor _stopCommandExecutor;
-        public override async void ExecuteSpecificCommand(IMoveCommand command)
+        public override async Task ExecuteSpecificCommand(IMoveCommand command)
         {
             GetComponent<NavMeshAgent>().destination = command.Target;
             _animator.SetTrigger("Walk");

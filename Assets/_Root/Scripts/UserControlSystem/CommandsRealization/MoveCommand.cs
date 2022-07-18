@@ -1,13 +1,16 @@
 using Abstractions.Commands;
 using UnityEngine;
 
-
-public class MoveCommand : IMoveCommand
+namespace Core
 {
-    public Vector3 Target { get; }
-    public MoveCommand(Vector3 target)
-    {
-        Target = target;
-    }
 
+    public class MoveCommand : IMoveCommand
+    {
+        public Vector3 Target { get; }
+        public MoveCommand(Vector3 target)
+        {
+            Target = target;
+        }
+
+    }
 }

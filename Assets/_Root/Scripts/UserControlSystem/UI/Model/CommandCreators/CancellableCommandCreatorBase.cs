@@ -1,39 +1,47 @@
-using Abstractions.Commands;
 using System;
 using System.Threading;
-using UI.Model.CommandCreators;
+using Abstractions.Commands;
 using Utils;
 using Utils.AssetsInjector;
 using Zenject;
 
-public abstract class CancellableCommandCreatorBase<TCommand, TArgument> :
-CommandCreatorBase<TCommand> where TCommand : ICommand
+namespace UserControlSystem
 {
-    [Inject] private AssetsContext _context;
-    [Inject] private IAwaitable<TArgument> _awaitableArgument;
-    private CancellationTokenSource _ctSource;
-    protected override sealed async void
-    classSpecificCommandCreation(Action<TCommand> creationCallback)
+    public abstract class CancellableCommandCreatorBase<TCommand, TArgument>
+        : CommandCreatorBase<TCommand> where TCommand : ICommand
     {
-        _ctSource = new CancellationTokenSource();
-        try
+        [Inject] private AssetsContext _context;
+        [Inject] private IAwaitable<TArgument> _awaitableArgument;
+
+        private CancellationTokenSource _ctSource;
+
+        protected override async void ClassSpecificCommandCreation(Action<TCommand> creationCallback)
         {
-            var argument = await _awaitableArgument.WithCancellation(_ctSource.Token);
-            creationCallback?
-            .Invoke(_context.Inject(createCommand(argument)));
+            _ctSource = new CancellationTokenSource();
+            try
+            {
+                var argument = await _awaitableArgument.WithCancellation(_ctSource.Token);
+                creationCallback?
+                    .Invoke(_context.Inject(CreateCommand(argument)));
+            }
+            catch
+            {
+                
+            }
         }
-        catch { }
-    }
-    protected abstract TCommand createCommand(TArgument argument);
-    public override void ProcessCancel()
-    {
-        base.ProcessCancel();
-        if (_ctSource != null)
+
+        protected abstract TCommand CreateCommand(TArgument argument);
+
+        public override void ProcessCancel()
         {
-            _ctSource.Cancel();
-            _ctSource.Dispose();
-            _ctSource = null;
+            base.ProcessCancel();
+
+            if (_ctSource != null)
+            {
+                _ctSource.Cancel();
+                _ctSource.Dispose();
+                _ctSource = null;
+            }
         }
     }
 }
-

@@ -1,13 +1,13 @@
 ﻿using Abstractions;
 using Abstractions.Commands.CommandInterfaces;
+using Core;
 
-namespace UI.Model.CommandCreators
+namespace UserControlSystem
 {
     public class AttackCommandCommandCreator :
        CancellableCommandCreatorBase<IAttackCommand, IAttackable>
 
     {
-        protected override IAttackCommand createCommand(IAttackable argument) => new
-AttackCommand(argument);
+        protected override IAttackCommand CreateCommand(IAttackable argument) => new AttackCommand(argument);
     }
 }
