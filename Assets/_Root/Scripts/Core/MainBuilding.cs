@@ -21,8 +21,9 @@ namespace Core
         int IHealthValue.Health => _health;
 
         int IHealthValue.MaxHealth => _maxHealth;
+        public Vector3 RallyPoint { get; set; }
 
-       
+
     }
 }
 

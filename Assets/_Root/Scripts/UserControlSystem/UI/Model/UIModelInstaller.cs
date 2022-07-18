@@ -1,4 +1,5 @@
-﻿using Abstractions.Commands;
+﻿using Abstractions;
+using Abstractions.Commands;
 using Abstractions.Commands.CommandInterfaces;
 using UnityEngine;
 using Utils.AssetsInjector;
@@ -23,6 +24,8 @@ namespace UserControlSystem.UI.Model
             .To<PatrolCommandCommandCreator>().AsTransient();
             Container.Bind<CommandCreatorBase<IStopCommand>>()
             .To<StopCommandCommandCreator>().AsTransient();
+            Container.Bind<CommandCreatorBase<ISetRallyPointCommand>>()
+                .To<SetRallyPointCommandCreator>().AsTransient();
 
             Container.Bind<CommandButtonsModel>().AsTransient();
 

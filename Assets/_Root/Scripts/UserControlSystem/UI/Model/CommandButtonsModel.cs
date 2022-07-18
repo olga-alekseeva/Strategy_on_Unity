@@ -41,7 +41,7 @@ namespace UserControlSystem
 
         public void ExecuteCommandWrapper(object command, ICommandsQueue commandsQueue)
         {
-            if (!Input.GetKey(KeyCode.LeftShift) && !Input.GetKey(KeyCode.RightShift))
+            if (!Input.GetKey(KeyCode.LeftShift) && !Input.GetKey(KeyCode.LeftShift))
             {
                 commandsQueue.Clear();
             }

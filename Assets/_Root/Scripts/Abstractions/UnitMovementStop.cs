@@ -7,6 +7,10 @@ namespace Abstractions
 {
     public class UnitMovementStop : MonoBehaviour, IAwaitable<AsyncExtensions.Void>
     {
+        public event Action OnStop;
+        [SerializeField] private NavMeshAgent _agent;
+       
+
         public class StopAwaiter : IAwaiter<AsyncExtensions.Void>
         {
             private readonly UnitMovementStop _unitMovementStop;
@@ -36,8 +40,6 @@ namespace Abstractions
             public bool IsCompleted => _isCompleted;
             public AsyncExtensions.Void GetResult() => new AsyncExtensions.Void();
         }
-        public event Action OnStop;
-        [SerializeField] private NavMeshAgent _agent;
         void Update()
         {
             if (!_agent.pathPending)
