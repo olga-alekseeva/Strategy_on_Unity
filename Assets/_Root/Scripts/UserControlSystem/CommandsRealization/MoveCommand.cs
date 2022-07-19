@@ -1,7 +1,7 @@
 using Abstractions.Commands;
 using UnityEngine;
 
-namespace Core
+namespace UserControlSystem.CommandsRealization
 {
 
     public class MoveCommand : IMoveCommand

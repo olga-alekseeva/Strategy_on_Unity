@@ -13,6 +13,4 @@ MonoBehaviour:
   m_Name: AssetsContext
   m_EditorClassIdentifier: 
   _objects:
-  - {fileID: 3677898433521838133, guid: 802068fafce60fb4c9d0384c0a8c994a, type: 3}
-  - {fileID: 3196068355872454380, guid: d6c9c7284471b6f4cba30a50b6415295, type: 3}
   - {fileID: 3392164026998046749, guid: 0cf90fa2b1aa42646b9ae2d67f3b08e1, type: 3}

@@ -5,8 +5,6 @@ using System.Collections.Generic;
 using UI.View;
 using UniRx;
 using UnityEngine;
-using UserControlSystem;
-using UserControlSystem.UI.Model;
 using Zenject;
 
 namespace UserControlSystem
@@ -46,8 +44,8 @@ public sealed class CommandButtonsPresenter : MonoBehaviour
         {
             var commandExecutors = new List<ICommandExecutor>();
             commandExecutors.AddRange((selectable as Component).GetComponentsInParent<ICommandExecutor>());
-                var queue = (selectable as Component).GetComponentInParent<ICommandsQueue>();
-                _view.MakeLayout(commandExecutors, queue);
+            var queue = (selectable as Component).GetComponentInParent<ICommandsQueue>();
+            _view.MakeLayout(commandExecutors, queue);
         }
     }
 
