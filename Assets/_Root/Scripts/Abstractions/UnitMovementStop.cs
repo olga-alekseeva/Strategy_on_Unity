@@ -18,7 +18,7 @@ namespace Core
 
         private void Awake()
         {
-            _collisionDetector.Collisions
+           _collisionDetector.Collisions
                 .Where(_ => _agent.hasPath)
                 .Where(collision => collision.collider.GetComponentInParent<IUnit>() != null)
                 .Select(_ => Time.frameCount)
