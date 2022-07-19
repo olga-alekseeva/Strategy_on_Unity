@@ -1,13 +1,15 @@
-using Abstractions.Commands;
+﻿using Abstractions.Commands;
 using UnityEngine;
 
-
-public class MoveCommand : IMoveCommand
+namespace Core
 {
-    public Vector3 Target { get; }
-    public MoveCommand(Vector3 target)
+    public sealed class MoveCommand : IMoveCommand
     {
-        Target = target;
+        public Vector3 Target { get; }
+        
+        public MoveCommand(Vector3 target)
+        {
+            Target = target;
+        }
     }
-
 }

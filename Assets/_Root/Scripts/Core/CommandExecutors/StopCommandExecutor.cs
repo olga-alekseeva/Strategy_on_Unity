@@ -6,10 +6,10 @@ namespace Abstractions.Commands.CommandExecutors
 
     public class StopCommandExecutor : CommandExecutorBase<IStopCommand>
     {
-        public CancellationTokenSource cancellationTokenSource { get; set; }
+        public CancellationTokenSource CancellationTokenSource { get; set; }
         public override async Task ExecuteSpecificCommand(IStopCommand command)
         {
-            cancellationTokenSource?.Cancel();
+            CancellationTokenSource?.Cancel();
         }
     }
 }

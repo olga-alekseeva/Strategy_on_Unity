@@ -13,6 +13,7 @@ namespace UI.View
 public class CommandButtonsView : MonoBehaviour
 {
     public Action<ICommandExecutor, ICommandsQueue> OnClick;
+
     [SerializeField] private GameObject _attackButton;
     [SerializeField] private GameObject _moveButton;
     [SerializeField] private GameObject _patrolButton;
@@ -51,8 +52,7 @@ public class CommandButtonsView : MonoBehaviour
         _moveButton.GetComponent<Selectable>().interactable = value;
         _patrolButton.GetComponent<Selectable>().interactable = value;
         _stopButton.GetComponent<Selectable>().interactable = value;
-        _produceUnitButton.GetComponent<Selectable>().interactable =
-        value;
+        _produceUnitButton.GetComponent<Selectable>().interactable = value;
     }
     public void MakeLayout(IEnumerable<ICommandExecutor> commandExecutors, ICommandsQueue queue)
     {
@@ -69,12 +69,10 @@ public class CommandButtonsView : MonoBehaviour
     }
     private GameObject getButtonGameObjectByType(Type executorInstanceType)
     {
-        return _buttonsByExecutorType
-        .Where(type =>
-        type.Key.IsAssignableFrom(executorInstanceType))
-        .First()
-        .Value;
-    }
+            return _buttonsByExecutorType
+                    .First(type => type.Key.IsAssignableFrom(executorInstanceType))
+                    .Value;
+        }
 
     public void Clear()
     {

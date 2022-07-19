@@ -17,7 +17,7 @@ namespace Abstractions
         private void onNewValue(TAwaited obj)
         {
             _scriptableObjectValueBase.OnNewValue -= onNewValue;
-            onWaitingResult(obj);
+            OnWaitingResult(obj);
         }
 
     }

@@ -16,17 +16,17 @@ namespace Abstractions.Commands.CommandExecutors
         {
             GetComponent<NavMeshAgent>().destination = command.Target;
             _animator.SetTrigger("Walk");
-            _stopCommandExecutor.cancellationTokenSource = new CancellationTokenSource();
+            _stopCommandExecutor.CancellationTokenSource = new CancellationTokenSource();
             try
             {
-                await _stop.WithCancellation(_stopCommandExecutor.cancellationTokenSource.Token);
+                await _stop.WithCancellation(_stopCommandExecutor.CancellationTokenSource.Token);
             }
             catch
             {
                 GetComponent<NavMeshAgent>().isStopped = true;
                 GetComponent<NavMeshAgent>().ResetPath();
             }
-            _stopCommandExecutor.cancellationTokenSource = null;
+            _stopCommandExecutor.CancellationTokenSource = null;
             _animator.SetTrigger("Idle");
         }
     }

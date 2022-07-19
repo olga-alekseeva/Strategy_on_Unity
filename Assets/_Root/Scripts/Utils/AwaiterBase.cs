@@ -23,7 +23,7 @@ namespace Utils
                 _continuation = continuation;
             }
         }
-        protected void onWaitingResult(TAwaited result)
+        protected void OnWaitingResult(TAwaited result)
         {
             _isCompleted = true;
             _result = result;
