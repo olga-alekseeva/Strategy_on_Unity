@@ -1173,7 +1173,7 @@ MonoBehaviour:
   _scriptableObjectInstallers: []
   _monoInstallers:
   - {fileID: 5460771971228459539}
-  - {fileID: 5460771971228459539}
+  - {fileID: 5844500825489394061}
   _installerPrefabs: []
   _autoRun: 1
   _kernel: {fileID: 0}
@@ -1225,7 +1225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13096cb4353bcb74598ba072a6d79211, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _factionId: 5
+  _factionId: 0
 --- !u!1 &3412062922375854292
 GameObject:
   m_ObjectHideFlags: 0
