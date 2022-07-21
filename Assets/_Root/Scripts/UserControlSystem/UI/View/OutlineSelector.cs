@@ -11,7 +11,11 @@ public class OutlineSelector : MonoBehaviour
     private bool _isSelectedCache;
     public void SetSelected(bool isSelected)
     {
-        if (isSelected == _isSelectedCache)
+            if (this == null)
+            {
+                return;
+            }
+            if (isSelected == _isSelectedCache)
         {
             return;
         }
