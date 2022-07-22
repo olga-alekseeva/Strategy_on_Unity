@@ -7,6 +7,7 @@ namespace Core
 {
     public class FactionMember : MonoBehaviour, IFactionMember
     {
+        [SerializeField] private int _factionId; 
         public static int FactionsCount 
         {
             get 
@@ -26,24 +27,23 @@ namespace Core
         }
         private static Dictionary<int, List<int>> _membersCount = new Dictionary<int, List<int>>();
         public int FactionId => _factionId;
-        [SerializeField] private int _factionId; 
         private void Awake()
         { 
             if (_factionId != 0) 
             { 
-                register(); 
+                Register(); 
             } 
         }
         public void SetFaction(int factionId) 
         {
             _factionId = factionId;
-            register(); 
+            Register(); 
         }
         private void OnDestroy() 
         { 
-            unregister(); 
+            Unregister(); 
         }
-        private void register() 
+        private void Register() 
         { 
             lock (_membersCount) 
             { 
@@ -57,7 +57,7 @@ namespace Core
                 } 
             }
         }
-        private void unregister()
+        private void Unregister()
         { 
             lock (_membersCount)
             { 

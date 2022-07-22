@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Core
 {
 
-    public class MainBuilding : MonoBehaviour, ISelectable
+    public class MainBuilding : MonoBehaviour, ISelectable, IAttackable
     {
         public float Health => _health;
         public float MaxHealth => _maxHealth;
@@ -14,13 +14,14 @@ namespace Core
 
         public Vector3 RallyPoint { get; set; }
 
-        [SerializeField] private float _maxHealth = 1000;
+        [SerializeField] private float _maxHealth = 100;
         [SerializeField] private Sprite _icon;
         [SerializeField] private Transform _pivotPoint;
 
-        private float _health = 1000;
+        private float _health = 100;
 
-        public void RecieveDamage(int amount)
+       
+        public void ReceiveDamage(int amount)
         {
             if (_health <= 0)
             {
@@ -32,7 +33,6 @@ namespace Core
                 Destroy(gameObject);
             }
         }
-
     }
 }
 

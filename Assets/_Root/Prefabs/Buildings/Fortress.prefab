@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe29d98eef068d44aad376741b08be9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 1000
+  _maxHealth: 100
   _icon: {fileID: 21300000, guid: b8bb23a142034df4588c13fd48995ef0, type: 3}
   _pivotPoint: {fileID: 7836882898204318052}
 --- !u!1 &914182291404435644

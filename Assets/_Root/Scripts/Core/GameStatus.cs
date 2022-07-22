@@ -8,7 +8,7 @@ public class GameStatus : MonoBehaviour, IGameStatus
 {
     public IObservable<int> Status => _status;
     private Subject<int> _status = new Subject<int>(); 
-    private void checkStatus(object state) 
+    private void CheckStatus(object state) 
     { 
         if (FactionMember.FactionsCount == 0) 
         {
@@ -21,6 +21,6 @@ public class GameStatus : MonoBehaviour, IGameStatus
     }
     private void Update()
     {
-        ThreadPool.QueueUserWorkItem(checkStatus);
+        ThreadPool.QueueUserWorkItem(CheckStatus);
     }
 }
