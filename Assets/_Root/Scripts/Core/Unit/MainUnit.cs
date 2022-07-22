@@ -5,14 +5,16 @@ using UnityEngine;
 
 namespace Core
 {
-    public class MainUnit : MonoBehaviour, ISelectable, IAttackable, IUnit, IDamageDealer
+    public class MainUnit : MonoBehaviour, ISelectable, IAttackable, IUnit, IDamageDealer, IAutomaticAttacker
     {
         public float Health => _health;
         public float MaxHealth => _maxHealth;
         public Transform PivotPoint => _pivotPoint;
         public Sprite Icon => _icon;
         public int Damage => _damage;
+        public float VisionRadius => _visionRadius;
 
+        [SerializeField] private float _visionRadius = 8f;
         [SerializeField] private Animator _animator;
         [SerializeField] private StopCommandExecutor _stopCommand;
         [SerializeField] private float _maxHealth = 100;

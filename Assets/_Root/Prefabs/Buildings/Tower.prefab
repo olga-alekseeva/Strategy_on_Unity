@@ -18,6 +18,8 @@ GameObject:
   - component: {fileID: 3724407464003531512}
   - component: {fileID: 3724407464003531513}
   - component: {fileID: 3724407464003531514}
+  - component: {fileID: 1152594930265507775}
+  - component: {fileID: 9075226226658729648}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Untagged
@@ -116,6 +118,7 @@ MonoBehaviour:
   _scriptableObjectInstallers: []
   _monoInstallers:
   - {fileID: 3724407464003531519}
+  - {fileID: 9075226226658729648}
   _installerPrefabs: []
   _autoRun: 1
   _kernel: {fileID: 0}
@@ -168,6 +171,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _factionId: 2
+--- !u!114 &1152594930265507775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 234473507991991567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f06bb4c6d55fd504e97c5863e207516a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &9075226226658729648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 234473507991991567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6681f6e5ddbde104db05ffea9182e5f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _factionMemberParallelInfoUpdater: {fileID: 1152594930265507775}
 --- !u!1 &923310010792348208
 GameObject:
   m_ObjectHideFlags: 0

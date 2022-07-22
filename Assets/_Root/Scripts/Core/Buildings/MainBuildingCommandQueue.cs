@@ -9,7 +9,7 @@ namespace Core
     {
         [Inject] CommandExecutorBase<IProduceUnitCommand> _produceUnitCommandExecutor;
         [Inject] CommandExecutorBase<ISetRallyPointCommand> _setRallyCommandExecutor;
-
+        public ICommand CurrentCommand => default;
         public void Clear() { }
 
         public async void EnqueueCommand(object command)

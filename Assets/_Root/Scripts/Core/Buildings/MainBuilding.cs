@@ -7,6 +7,7 @@ namespace Core
 
     public class MainBuilding : MonoBehaviour, ISelectable, IAttackable
     {
+
         public float Health => _health;
         public float MaxHealth => _maxHealth;
         public Transform PivotPoint => _pivotPoint;
