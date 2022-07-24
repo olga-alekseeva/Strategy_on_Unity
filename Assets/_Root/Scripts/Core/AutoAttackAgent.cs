@@ -20,5 +20,6 @@ public class AutoAttackAgent : MonoBehaviour
     {
         _queue.Clear();
         _queue.EnqueueCommand(new AutoAttackCommand(target.GetComponent<IAttackable>()));
+       
     }
 }

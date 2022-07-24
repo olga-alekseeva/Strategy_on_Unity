@@ -1050,13 +1050,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26bba3bb64d8d4f4092f9ef945852920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _visionRadius: 8
+  _visionRadius: 2
   _animator: {fileID: 2581137512726376445}
   _stopCommand: {fileID: 4986460323474886805}
   _maxHealth: 100
   _icon: {fileID: 21300000, guid: efb235924c682524eb374c230269e9fc, type: 3}
   _pivotPoint: {fileID: 2619040654430542503}
-  _damage: 25
+  _damage: 10
 --- !u!114 &4986460323474886889
 MonoBehaviour:
   m_ObjectHideFlags: 0

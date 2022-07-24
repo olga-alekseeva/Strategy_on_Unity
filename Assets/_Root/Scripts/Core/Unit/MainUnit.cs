@@ -14,7 +14,7 @@ namespace Core
         public int Damage => _damage;
         public float VisionRadius => _visionRadius;
 
-        [SerializeField] private float _visionRadius = 8f;
+        [SerializeField] private float _visionRadius;
         [SerializeField] private Animator _animator;
         [SerializeField] private StopCommandExecutor _stopCommand;
         [SerializeField] private float _maxHealth = 100;
