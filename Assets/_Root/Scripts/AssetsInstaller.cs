@@ -2,6 +2,7 @@ using Abstractions;
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using UserControlSystem;
 using UserControlSystem.UI.Model;
 using Utils;
 using Utils.AssetsInjector;
@@ -14,7 +15,7 @@ public class AssetsInstaller : ScriptableObjectInstaller<AssetsInstaller>
     [SerializeField] private Vector3Value _groundClicksRMB;
     [SerializeField] private AttackableValue _attackableClicksRMB;
     [SerializeField] private SelectableValue _selectables;
-
+    private RMBMoveData _rMBMoveData;
     public override void InstallBindings()
     {
         Container.Bind<IAwaitable<IAttackable>>()
@@ -23,6 +24,10 @@ public class AssetsInstaller : ScriptableObjectInstaller<AssetsInstaller>
             .FromInstance(_groundClicksRMB);
         Container.Bind<IObservable<ISelectable>>().FromInstance(_selectables);
         Container.BindInstances(_legacyContext, _selectables);
+        _rMBMoveData = new RMBMoveData();
+        _rMBMoveData.selectableValue = _selectables;
+        _rMBMoveData.vector3value = _groundClicksRMB;
+        Container.Bind<RMBMoveData>().FromInstance(_rMBMoveData);
     }
 
 }

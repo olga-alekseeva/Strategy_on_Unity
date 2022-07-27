@@ -14,8 +14,7 @@ namespace UserControlSystem
 
 public class RMBMoveExecutor : MonoBehaviour
 {
-    private Vector3Value _vector3Value;
-    private SelectableValue _selectableValue;
+        [Inject] private RMBMoveData _moveData;
         [Inject] private CommandCreatorBase<IMoveCommand> _commandCreator;
         private MoveCommandExecutor _moveCommandExecutor;
         private ISelectable _selectedUnit;
@@ -35,13 +34,13 @@ public class RMBMoveExecutor : MonoBehaviour
         }
         private void Start()
         {
-            _vector3Value.OnNewValue += RMB_Pressed;
+            _moveData.vector3value.OnNewValue += RMB_Pressed;
         }
         private void RMB_Pressed(Vector3 vector3)
         {
             if (_commandIsPending)
                 return;
-            if (_selectableValue.CurrentValue != _selectedUnit)
+            if (_moveData.selectableValue.CurrentValue != _selectedUnit)
                 return;
             _secondUnitCommandsQueue.EnqueueCommand(new MoveCommand(vector3));
 
