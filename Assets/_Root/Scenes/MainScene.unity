@@ -4289,6 +4289,30 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
+    - target: {fileID: 4265807271586060488, guid: 2a137d1b69599db49bc3f0c2e1743e59, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265807271586060488, guid: 2a137d1b69599db49bc3f0c2e1743e59, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265807271586060488, guid: 2a137d1b69599db49bc3f0c2e1743e59, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265807271586060488, guid: 2a137d1b69599db49bc3f0c2e1743e59, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913384906925727776, guid: 2a137d1b69599db49bc3f0c2e1743e59, type: 3}
+      propertyPath: m_Name
+      value: ceFighterButtonutton
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913384906925727776, guid: 2a137d1b69599db49bc3f0c2e1743e59, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5285859337908460166, guid: 2a137d1b69599db49bc3f0c2e1743e59, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -4457,9 +4481,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
+    - target: {fileID: 7809205023246906721, guid: 2a137d1b69599db49bc3f0c2e1743e59, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7809205023246906721, guid: 2a137d1b69599db49bc3f0c2e1743e59, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: efb235924c682524eb374c230269e9fc, type: 3}
     - target: {fileID: 7872286598413201575, guid: 2a137d1b69599db49bc3f0c2e1743e59, type: 3}
       propertyPath: m_text
       value: Set Point
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086778246227606931, guid: 2a137d1b69599db49bc3f0c2e1743e59, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8223211927891532577, guid: 2a137d1b69599db49bc3f0c2e1743e59, type: 3}
       propertyPath: m_ChildControlWidth
