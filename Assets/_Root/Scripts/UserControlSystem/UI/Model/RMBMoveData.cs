@@ -8,7 +8,7 @@ namespace UserControlSystem
 
 public class RMBMoveData 
 {
-        public Vector3Value vector3value;
+        public Vector3Value vector3Value;
         public SelectableValue selectableValue;
 }
 }

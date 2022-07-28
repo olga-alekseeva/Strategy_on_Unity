@@ -5,9 +5,9 @@ using Zenject;
 
 public class ProduceUnitCommand : IProduceUnitCommand
 {
-    [Inject(Id = "SecondUnit")] public string UnitName { get; }
-    [Inject(Id = "SecondUnit")] public Sprite Icon { get; }
-    [Inject(Id = "SecondUnit")] public float ProductionTime { get; }
+    [Inject(Id = "Fighter")] public string UnitName { get; }
+    [Inject(Id = "Fighter")] public Sprite Icon { get; }
+    [Inject(Id = "Fighter")] public float ProductionTime { get; }
     public GameObject UnitPrefab => _unitPrefab;
-    [InjectAsset("SecondUnit")] private GameObject _unitPrefab;
+    [InjectAsset("Fighter")] private GameObject _unitPrefab;
 }

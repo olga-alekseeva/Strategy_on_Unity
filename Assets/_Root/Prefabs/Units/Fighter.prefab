@@ -992,7 +992,7 @@ GameObject:
   - component: {fileID: -4157538019510836044}
   - component: {fileID: -5193110400745827514}
   m_Layer: 0
-  m_Name: SecondUnit
+  m_Name: Fighter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

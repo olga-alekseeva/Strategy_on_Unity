@@ -10,7 +10,7 @@ namespace UserControlSystem.UI.Model
 {
     internal class UIModelInstaller : MonoInstaller
     {
-        [SerializeField] private Sprite _secondUnitSprite;
+        [SerializeField] private Sprite _fighter;
 
         public override void InstallBindings()
         {
@@ -29,9 +29,9 @@ namespace UserControlSystem.UI.Model
 
             Container.Bind<CommandButtonsModel>().AsTransient();
 
-            Container.Bind<float>().WithId("SecondUnit").FromInstance(5f);
-            Container.Bind<string>().WithId("SecondUnit").FromInstance("SecondUnit");
-            Container.Bind<Sprite>().WithId("SecondUnit").FromInstance(_secondUnitSprite);
+            Container.Bind<float>().WithId("Fighter").FromInstance(5f);
+            Container.Bind<string>().WithId("Fighter").FromInstance("Fighter");
+            Container.Bind<Sprite>().WithId("Fighter").FromInstance(_fighter);
 
             Container.Bind<BottomCenterModel>().AsSingle();
         }

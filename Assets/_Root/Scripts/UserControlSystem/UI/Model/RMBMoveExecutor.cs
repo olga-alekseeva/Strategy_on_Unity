@@ -18,14 +18,14 @@ public class RMBMoveExecutor : MonoBehaviour
         [Inject] private CommandCreatorBase<IMoveCommand> _commandCreator;
         private MoveCommandExecutor _moveCommandExecutor;
         private ISelectable _selectedUnit;
-        private SecondUnitCommandsQueue _secondUnitCommandsQueue;
+        private FighterCommandsQueue _secondUnitCommandsQueue;
         private bool _commandIsPending = false;
 
         private void Awake()
         {
             _moveCommandExecutor = gameObject.GetComponent<MoveCommandExecutor>();
             _selectedUnit = gameObject.GetComponent<ISelectable>();
-            _secondUnitCommandsQueue = gameObject.GetComponent<SecondUnitCommandsQueue>();
+            _secondUnitCommandsQueue = gameObject.GetComponent<FighterCommandsQueue>();
             MessageBroker.Default.Receive<CommandPending>().Subscribe(CommandPending_Changed);
         }
         private void CommandPending_Changed(CommandPending commandPending)
@@ -34,7 +34,7 @@ public class RMBMoveExecutor : MonoBehaviour
         }
         private void Start()
         {
-            _moveData.vector3value.OnNewValue += RMB_Pressed;
+            _moveData.vector3Value.OnNewValue += RMB_Pressed;
         }
         private void RMB_Pressed(Vector3 vector3)
         {

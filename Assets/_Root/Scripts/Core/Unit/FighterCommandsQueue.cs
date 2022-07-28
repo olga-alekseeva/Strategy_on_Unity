@@ -8,7 +8,7 @@ using System;
 
 namespace Core
 {
-    public sealed class SecondUnitCommandsQueue: MonoBehaviour, ICommandsQueue
+    public sealed class FighterCommandsQueue: MonoBehaviour, ICommandsQueue
     {
         [Inject] CommandExecutorBase<IMoveCommand> _moveCommandExecutor;
         [Inject] CommandExecutorBase<IPatrolCommand> _patrolCommandExecutor;

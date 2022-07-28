@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class AutoAttackAgent : MonoBehaviour
 {
-    [SerializeField] private SecondUnitCommandsQueue _queue;
+    [SerializeField] private FighterCommandsQueue _queue;
 
     private void Start()
     {

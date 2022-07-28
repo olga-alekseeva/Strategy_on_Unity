@@ -26,7 +26,7 @@ public class AssetsInstaller : ScriptableObjectInstaller<AssetsInstaller>
         Container.BindInstances(_legacyContext, _selectables);
         _rMBMoveData = new RMBMoveData();
         _rMBMoveData.selectableValue = _selectables;
-        _rMBMoveData.vector3value = _groundClicksRMB;
+        _rMBMoveData.vector3Value = _groundClicksRMB;
         Container.Bind<RMBMoveData>().FromInstance(_rMBMoveData);
     }
 
