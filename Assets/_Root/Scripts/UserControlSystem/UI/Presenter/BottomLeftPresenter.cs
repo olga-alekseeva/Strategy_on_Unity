@@ -13,8 +13,6 @@ public class BottomLeftPresenter : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _text;
     [SerializeField] private Image _sliderBackground;
     [SerializeField] private Image _sliderFillImage;
-    [SerializeField] private Material _selectedMaterial;
-    [SerializeField] private Material _unselectedMaterial;
 
     [Inject] private IObservable<ISelectable> _selectedValues;
     private void Start()
