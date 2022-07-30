@@ -50,7 +50,7 @@ namespace Core.CommandExecutors
         {
             var instance = _diContainer.InstantiatePrefab(command.UnitPrefab, transform.position, Quaternion.identity, _unitsParent);
             var queue = instance.GetComponent<ICommandsQueue>();
-            var mainBuilding = GetComponent<MainBuilding>();
+            var mainBuilding = GetComponent<Buildings>();
             var factionMember = instance.GetComponent<FactionMember>();
             factionMember.SetFaction(GetComponent<FactionMember>().FactionId);
             queue.EnqueueCommand(new MoveCommand(mainBuilding.RallyPoint));

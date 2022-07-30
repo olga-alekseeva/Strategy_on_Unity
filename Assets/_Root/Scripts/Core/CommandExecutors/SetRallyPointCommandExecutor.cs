@@ -8,7 +8,7 @@ namespace Core.CommandExecutors
     {
         public override async Task ExecuteSpecificCommand(ISetRallyPointCommand command)
         {
-            GetComponent<MainBuilding>().RallyPoint = command.RallyPoint;
+            GetComponent<Buildings>().RallyPoint = command.RallyPoint;
         }
     }
 }
