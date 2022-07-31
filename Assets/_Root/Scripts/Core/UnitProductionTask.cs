@@ -6,7 +6,7 @@ using Abstractions;
 namespace Core
 {
 
-    public class UnitProductionTask : IUnitProductionTask
+    public class UnitProductionTask : IFighterUnitProductionTask
     {
         public Sprite Icon { get; }
         public float TimeLeft { get; set; }

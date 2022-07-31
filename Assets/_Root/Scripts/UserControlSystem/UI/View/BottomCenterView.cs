@@ -41,7 +41,7 @@ public class BottomCenterView : MonoBehaviour
         _currentUnitName.enabled = false;
         _unitProductionTaskCt?.Dispose();
     }
-    public void SetTask(IUnitProductionTask task, int index)
+    public void SetTask(IFighterUnitProductionTask task, int index)
     {
         if (task == null)
         {

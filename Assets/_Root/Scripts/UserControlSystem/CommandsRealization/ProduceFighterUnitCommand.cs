@@ -5,7 +5,7 @@ using Zenject;
 namespace UserControlSystem.CommandsRealization
 {
 
-    public class ProduceFighterUnitCommand : IProduceUnitCommand
+    public class ProduceFighterUnitCommand : IProduceFighterUnitCommand
     {
         [Inject(Id = "Fighter")] public string UnitName { get; }
         [Inject(Id = "Fighter")] public Sprite Icon { get; }

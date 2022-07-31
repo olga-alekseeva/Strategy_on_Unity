@@ -1,7 +1,7 @@
 namespace Abstractions
 {
 
-public interface IUnitProductionTask : IIconHolder
+public interface IFighterUnitProductionTask : IIconHolder
 {
     public string UnitName { get; }
     public float TimeLeft { get; }

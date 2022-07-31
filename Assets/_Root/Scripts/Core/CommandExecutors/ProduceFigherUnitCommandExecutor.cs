@@ -9,15 +9,15 @@ using Random = UnityEngine.Random;
 namespace Core.CommandExecutors
 {
 
-    public class ProduceUnitCommandExecutor : CommandExecutorBase<IProduceUnitCommand>, IUnitProducer
+    public class ProduceFigherUnitCommandExecutor : CommandExecutorBase<IProduceFighterUnitCommand>, IFighterUnitProducer
     {
-        public IReadOnlyReactiveCollection<IUnitProductionTask> Queue => _queue;
+        public IReadOnlyReactiveCollection<IFighterUnitProductionTask> Queue => _queue;
 
         [SerializeField] private Transform _unitsParent;
         [SerializeField] private int _maximumUnitsInQueue = 6;
         [Inject] private DiContainer _diContainer;
 
-        private ReactiveCollection<IUnitProductionTask> _queue = new ReactiveCollection<IUnitProductionTask>();
+        private ReactiveCollection<IFighterUnitProductionTask> _queue = new ReactiveCollection<IFighterUnitProductionTask>();
 
         private void Update()
         {
@@ -46,7 +46,7 @@ namespace Core.CommandExecutors
             _queue.RemoveAt(_queue.Count - 1);
         }
 
-        public override async Task ExecuteSpecificCommand(IProduceUnitCommand command)
+        public override async Task ExecuteSpecificCommand(IProduceFighterUnitCommand command)
         {
             var instance = _diContainer.InstantiatePrefab(command.UnitPrefab, transform.position, Quaternion.identity, _unitsParent);
             var queue = instance.GetComponent<ICommandsQueue>();
