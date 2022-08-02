@@ -5,9 +5,7 @@ using Zenject;
 
 namespace UserControlSystem.CommandsRealization
 {
-    public class ProduceHealerUnitCommand
-    {
-        public class ProduceFighterUnitCommand : IProduceFighterUnitCommand
+    public class ProduceHealerUnitCommand: IProduceHealerUnitCommand
         {
             [Inject(Id = "Healer")] public string UnitName { get; }
             [Inject(Id = "Healer")] public Sprite Icon { get; }
@@ -15,5 +13,5 @@ namespace UserControlSystem.CommandsRealization
             public GameObject UnitPrefab => _unitPrefab;
             [InjectAsset("Healer")] private GameObject _unitPrefab;
         }
-    }
+    
 }
