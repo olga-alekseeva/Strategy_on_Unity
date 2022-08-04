@@ -11,14 +11,11 @@ namespace UserControlSystem.UI.Model
     internal class UIModelInstaller : MonoInstaller
     {
         [SerializeField] private Sprite _fighter;
-        [SerializeField] private Sprite _healer;
 
         public override void InstallBindings()
         {
-            Container.Bind<CommandCreatorBase<IProduceFighterUnitCommand>>()
-            .To<ProduceFighterUnitCommandCommandCreator>().AsTransient();
-            Container.Bind<CommandCreatorBase<IProduceHealerUnitCommand>>()
-            .To<ProduceHealerUnitCommandCommandCreator>().AsTransient();
+            Container.Bind<CommandCreatorBase<IProduceUnitCommand>>()
+            .To<ProduceUnitCommandCommandCreator>().AsTransient();
             Container.Bind<CommandCreatorBase<IAttackCommand>>()
             .To<AttackCommandCommandCreator>().AsTransient();
             Container.Bind<CommandCreatorBase<IMoveCommand>>()

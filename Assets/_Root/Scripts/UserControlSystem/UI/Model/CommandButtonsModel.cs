@@ -13,14 +13,12 @@ namespace UserControlSystem
         public event Action OnCommandSent;
         public event Action OnCommandCancel;
 
-        [Inject] private CommandCreatorBase<IProduceFighterUnitCommand> _fighterUnitProducer;
-        [Inject] private CommandCreatorBase<IProduceHealerUnitCommand> _healerUnitProducer;
+        [Inject] private CommandCreatorBase<IProduceUnitCommand> _unitProducer;
         [Inject] private CommandCreatorBase<IAttackCommand> _attacker;
         [Inject] private CommandCreatorBase<IStopCommand> _stopper;
         [Inject] private CommandCreatorBase<IMoveCommand> _mover;
         [Inject] private CommandCreatorBase<IPatrolCommand> _patroller;
         [Inject] private CommandCreatorBase<ISetRallyPointCommand> _setRally;
-        [Inject] private CommandCreatorBase<IProduceResourcesCommand> _produceResources;
 
         private bool _commandIsPending;
 
@@ -33,14 +31,12 @@ namespace UserControlSystem
             _commandIsPending = true;
             OnCommandAccepted?.Invoke(commandExecutor);
 
-            _fighterUnitProducer.ProcessCommandExecutor(commandExecutor, command => ExecuteCommandWrapper(command, commandsQueue));
-            _healerUnitProducer.ProcessCommandExecutor(commandExecutor, command => ExecuteCommandWrapper(command, commandsQueue));
+            _unitProducer.ProcessCommandExecutor(commandExecutor, command => ExecuteCommandWrapper(command, commandsQueue));
             _attacker.ProcessCommandExecutor(commandExecutor, command => ExecuteCommandWrapper(command, commandsQueue));
             _stopper.ProcessCommandExecutor(commandExecutor, command => ExecuteCommandWrapper(command, commandsQueue));
             _mover.ProcessCommandExecutor(commandExecutor, command => ExecuteCommandWrapper(command, commandsQueue));
             _patroller.ProcessCommandExecutor(commandExecutor, command => ExecuteCommandWrapper(command, commandsQueue));
             _setRally.ProcessCommandExecutor(commandExecutor, command => ExecuteCommandWrapper(command, commandsQueue));
-            _produceResources.ProcessCommandExecutor(commandExecutor, command => ExecuteCommandWrapper(command, commandsQueue));
         }
 
         public void ExecuteCommandWrapper(object command, ICommandsQueue commandsQueue)
@@ -62,14 +58,12 @@ namespace UserControlSystem
 
         private void processOnCancel()
         {
-            _fighterUnitProducer.ProcessCancel();
-            _healerUnitProducer.ProcessCancel();
+            _unitProducer.ProcessCancel();
             _attacker.ProcessCancel();
             _stopper.ProcessCancel();
             _mover.ProcessCancel();
             _patroller.ProcessCancel();
             _setRally.ProcessCancel();
-            _produceResources.ProcessCancel();
 
             OnCommandCancel?.Invoke();
         }

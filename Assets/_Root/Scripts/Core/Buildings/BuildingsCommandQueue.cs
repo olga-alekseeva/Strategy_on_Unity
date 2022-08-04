@@ -7,9 +7,8 @@ namespace Core
 {
     public class BuildingsCommandQueue : MonoBehaviour, ICommandsQueue
     {
-        [Inject] CommandExecutorBase<IProduceFighterUnitCommand> _produceUnitCommandExecutor;
+        [Inject] CommandExecutorBase<IProduceUnitCommand> _produceUnitCommandExecutor;
         [Inject] CommandExecutorBase<ISetRallyPointCommand> _setRallyCommandExecutor;
-
         public ICommand CurrentCommand => default;
         public void Clear() { }
 

@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Abstractions.Commands
 {
-    public interface IProduceFighterUnitCommand : ICommand, IIconHolder
+    public interface IProduceUnitCommand : ICommand, IIconHolder
     {
         GameObject UnitPrefab { get; }
         float ProductionTime { get; }

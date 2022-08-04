@@ -7,14 +7,14 @@ using Zenject;
 namespace UserControlSystem
 {
 
-    public class ProduceFighterUnitCommandCommandCreator :
-    CommandCreatorBase<IProduceFighterUnitCommand>
+    public class ProduceUnitCommandCommandCreator :
+    CommandCreatorBase<IProduceUnitCommand>
     {
         [Inject] private AssetsContext _context;
         [Inject] private DiContainer _diContainer;
 
         protected override void
-        ClassSpecificCommandCreation(Action<IProduceFighterUnitCommand> creationCallback)
+        ClassSpecificCommandCreation(Action<IProduceUnitCommand> creationCallback)
         {
             var produceUnitCommand = _context.Inject(new ProduceUnitCommandHeir());
             _diContainer.Inject(produceUnitCommand);

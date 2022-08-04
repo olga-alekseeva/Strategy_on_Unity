@@ -14,14 +14,13 @@ public class CommandButtonsView : MonoBehaviour
 {
     public Action<ICommandExecutor, ICommandsQueue> OnClick;
 
-        [SerializeField] private GameObject _attackButton;
-        [SerializeField] private GameObject _moveButton;
-        [SerializeField] private GameObject _patrolButton;
-        [SerializeField] private GameObject _stopButton;
-        [SerializeField] private GameObject _produceFighterButton;
-        [SerializeField] private GameObject _produceHealerButton;
-        [SerializeField] private GameObject _setRallyButton;
-        [SerializeField] private GameObject _produceResourcesButton;
+    [SerializeField] private GameObject _attackButton;
+    [SerializeField] private GameObject _moveButton;
+    [SerializeField] private GameObject _patrolButton;
+    [SerializeField] private GameObject _stopButton;
+    [SerializeField] private GameObject _produceFighterButton;
+    [SerializeField] private GameObject _produceHealerButton;
+    [SerializeField] private GameObject _setRallyButton;
 
     private Dictionary<Type, GameObject> _buttonsByExecutorType;
     private void Start()
@@ -36,13 +35,11 @@ public class CommandButtonsView : MonoBehaviour
             _buttonsByExecutorType
                 .Add(typeof(ICommandExecutor<IStopCommand>), _stopButton);
             _buttonsByExecutorType
-                .Add(typeof(ICommandExecutor<IProduceFighterUnitCommand>), _produceFighterButton);
+                .Add(typeof(ICommandExecutor<IProduceUnitCommand>), _produceFighterButton);
             _buttonsByExecutorType
-                .Add(typeof(ICommandExecutor<IProduceHealerUnitCommand>), _produceHealerButton);
+                .Add(typeof(ICommandExecutor<IProduceUnitCommand>), _produceHealerButton);
             _buttonsByExecutorType
                 .Add(typeof(ICommandExecutor<ISetRallyPointCommand>), _setRallyButton);
-            _buttonsByExecutorType
-               .Add(typeof(ICommandExecutor<IProduceResourcesCommand>), _produceResourcesButton);
         }
 
     public void BlockInteractions(ICommandExecutor ce)
@@ -61,8 +58,7 @@ public class CommandButtonsView : MonoBehaviour
             _produceFighterButton.GetComponent<Selectable>().interactable = value;
             _produceHealerButton.GetComponent<Selectable>().interactable = value;
             _setRallyButton.GetComponent<Selectable>().interactable = value;
-            _produceResourcesButton.GetComponent<Selectable>().interactable = value;
-        }
+    }
     public void MakeLayout(IEnumerable<ICommandExecutor> commandExecutors, ICommandsQueue queue)
     {
         foreach (var currentExecutor in commandExecutors)

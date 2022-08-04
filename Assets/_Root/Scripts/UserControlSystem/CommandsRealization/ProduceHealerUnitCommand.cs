@@ -7,7 +7,7 @@ namespace UserControlSystem.CommandsRealization
 {
     public class ProduceHealerUnitCommand
     {
-        public class ProduceFighterUnitCommand : IProduceFighterUnitCommand
+        public class ProduceFighterUnitCommand : IProduceUnitCommand
         {
             [Inject(Id = "Healer")] public string UnitName { get; }
             [Inject(Id = "Healer")] public Sprite Icon { get; }
