@@ -18,14 +18,14 @@ namespace UserControlSystem
         [Inject] private CommandCreatorBase<IMoveCommand> _commandCreator;
         private MoveCommandExecutor _moveCommandExecutor;
         private ISelectable _selectedUnit;
-        private HealerCommandsQueue _healerUnitCommandsQueue;
+        private ICommandsQueue _unitCommandsQueue;
         private bool _commandIsPending = false;
 
         private void Awake()
         {
             _moveCommandExecutor = gameObject.GetComponent<MoveCommandExecutor>();
             _selectedUnit = gameObject.GetComponent<ISelectable>();
-            _healerUnitCommandsQueue = gameObject.GetComponent<HealerCommandsQueue>();
+            _unitCommandsQueue = gameObject.GetComponent<ICommandsQueue>();
             MessageBroker.Default.Receive<CommandPending>().Subscribe(CommandPending_Changed);
         }
         private void CommandPending_Changed(CommandPending commandPending)
@@ -42,7 +42,7 @@ namespace UserControlSystem
                 return;
             if (_moveData.selectableValue.CurrentValue != _selectedUnit)
                 return;
-            _healerUnitCommandsQueue.EnqueueCommand(new MoveCommand(vector3));
+            _unitCommandsQueue.EnqueueCommand(new MoveCommand(vector3));
 
         }
     }
