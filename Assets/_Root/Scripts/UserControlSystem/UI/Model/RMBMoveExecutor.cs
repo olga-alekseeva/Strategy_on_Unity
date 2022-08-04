@@ -12,20 +12,20 @@ using Zenject;
 namespace UserControlSystem
 {
 
-public class RMBMoveExecutor : MonoBehaviour
-{
+    public class RMBMoveExecutor : MonoBehaviour
+    {
         [Inject] private RMBMoveData _moveData;
         [Inject] private CommandCreatorBase<IMoveCommand> _commandCreator;
         private MoveCommandExecutor _moveCommandExecutor;
         private ISelectable _selectedUnit;
-        private FighterCommandsQueue _secondUnitCommandsQueue;
+        private HealerCommandsQueue _healerUnitCommandsQueue;
         private bool _commandIsPending = false;
 
         private void Awake()
         {
             _moveCommandExecutor = gameObject.GetComponent<MoveCommandExecutor>();
             _selectedUnit = gameObject.GetComponent<ISelectable>();
-            _secondUnitCommandsQueue = gameObject.GetComponent<FighterCommandsQueue>();
+            _healerUnitCommandsQueue = gameObject.GetComponent<HealerCommandsQueue>();
             MessageBroker.Default.Receive<CommandPending>().Subscribe(CommandPending_Changed);
         }
         private void CommandPending_Changed(CommandPending commandPending)
@@ -42,7 +42,7 @@ public class RMBMoveExecutor : MonoBehaviour
                 return;
             if (_moveData.selectableValue.CurrentValue != _selectedUnit)
                 return;
-            _secondUnitCommandsQueue.EnqueueCommand(new MoveCommand(vector3));
+            _healerUnitCommandsQueue.EnqueueCommand(new MoveCommand(vector3));
 
         }
     }
