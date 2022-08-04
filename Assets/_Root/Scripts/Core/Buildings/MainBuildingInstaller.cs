@@ -2,7 +2,7 @@ using Abstractions;
 using UnityEngine;
 using Zenject;
 
-public class BuildingsInstaller : MonoInstaller
+public class MainBuildingInstaller : MonoInstaller
 {
     [SerializeField] private FactionMemberParallelInfoUpdater _factionMemberParallelInfoUpdater;
     public override void InstallBindings() 

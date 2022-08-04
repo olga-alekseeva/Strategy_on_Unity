@@ -5,7 +5,7 @@ using Zenject;
 
 namespace Core
 {
-    public class BuildingsCommandQueue : MonoBehaviour, ICommandsQueue
+    public class MainBuildingCommandQueue : MonoBehaviour, ICommandsQueue
     {
         [Inject] CommandExecutorBase<IProduceUnitCommand> _produceUnitCommandExecutor;
         [Inject] CommandExecutorBase<ISetRallyPointCommand> _setRallyCommandExecutor;
