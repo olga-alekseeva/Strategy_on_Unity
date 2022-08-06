@@ -37,6 +37,15 @@ namespace Core
                 Invoke(nameof(Destroy), 1f);
             }
         }
+        public void ReceiveHeal(int amount)
+        {
+            if (_health >= _maxHealth)
+            {
+                return;
+            }
+            _health += amount;
+            
+        }
 
         private async void Destroy()
         {

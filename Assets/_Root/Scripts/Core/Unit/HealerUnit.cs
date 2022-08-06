@@ -1,27 +1,31 @@
 using Abstractions;
-using Abstractions.Commands;
+using Abstractions.Commands.CommandExecutors;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Core
 {
-
-    public class MainBuilding : MonoBehaviour, ISelectable, IAttackable
+    public class HealerUnit : MonoBehaviour, ISelectable, IAttackable, IUnit, IAutomaticAttacker, IDamageDealer
     {
-
         public float Health => _health;
         public float MaxHealth => _maxHealth;
         public Transform PivotPoint => _pivotPoint;
         public Sprite Icon => _icon;
+        public float VisionRadius => _visionRadius;
 
-        public Vector3 RallyPoint { get; set; }
+        public int Damage => _damage;
 
+        [SerializeField] private float _visionRadius;
+        [SerializeField] private Animator _animator;
+        [SerializeField] private StopCommandExecutor _stopCommand;
         [SerializeField] private float _maxHealth = 100;
         [SerializeField] private Sprite _icon;
         [SerializeField] private Transform _pivotPoint;
-
+        [SerializeField] private int _damage = 25;
         private float _health = 100;
 
-       
+
         public void ReceiveDamage(int amount)
         {
             if (_health <= 0)
@@ -31,8 +35,15 @@ namespace Core
             _health -= amount;
             if (_health <= 0)
             {
-                Destroy(gameObject);
+                _animator.SetTrigger("PlayDead");
+                Invoke(nameof(Destroy), 1f);
             }
+        }
+
+        private async void Destroy()
+        {
+            await _stopCommand.ExecuteSpecificCommand(new StopCommand());
+            Destroy(gameObject);
         }
 
         public void ReceiveHeal(int amount)

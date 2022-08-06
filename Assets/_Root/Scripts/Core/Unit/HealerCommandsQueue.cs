@@ -10,7 +10,8 @@ using Zenject;
 public class HealerCommandsQueue : MonoBehaviour, ICommandsQueue
 {
     [Inject] CommandExecutorBase<IMoveCommand> _moveCommandExecutor;
-    //[Inject] CommandExecutorBase<IStopCommand> _stopCommandExecutor;
+    [Inject] CommandExecutorBase<IStopCommand> _stopCommandExecutor;
+    [Inject] CommandExecutorBase<IHealCommand> _healCommandExecutor;
 
     private ReactiveCollection<ICommand> _innerCollection = new ReactiveCollection<ICommand>();
     public ICommand CurrentCommand => _innerCollection.Count > 0 ? _innerCollection[0] : default;
@@ -32,7 +33,9 @@ public class HealerCommandsQueue : MonoBehaviour, ICommandsQueue
     private async void ExecuteCommand(ICommand command)
     {
         await _moveCommandExecutor.TryExecuteCommand(command);
-       // await _stopCommandExecutor.TryExecuteCommand(command);
+        await _stopCommandExecutor.TryExecuteCommand(command);
+        await _healCommandExecutor.TryExecuteCommand(command);
+
         if (_innerCollection.Count > 0)
         {
             _innerCollection.RemoveAt(0);
