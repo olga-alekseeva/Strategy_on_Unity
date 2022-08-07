@@ -5,9 +5,9 @@ using Core;
 namespace UserControlSystem
 {
     public class HealCommandCommandCreator :
-       CancellableCommandCreatorBase<IHealCommand, IAttackable>
+       CancellableCommandCreatorBase<IHealCommand, IHealable>
 
     {
-        protected override IHealCommand CreateCommand(IAttackable argument) => new HealCommand(argument);
+        protected override IHealCommand CreateCommand(IHealable argument) => new HealCommand(argument);
     }
 }

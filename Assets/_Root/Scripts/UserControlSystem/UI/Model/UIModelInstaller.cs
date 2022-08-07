@@ -17,6 +17,8 @@ namespace UserControlSystem.UI.Model
         {
             Container.Bind<CommandCreatorBase<IProduceUnitCommand>>()
             .To<ProduceUnitCommandCommandCreator>().AsTransient();
+            Container.Bind<CommandCreatorBase<IProduceHealUnitCommand>>()
+                .To<ProduceHealUnitCommandCommandCreator>().AsTransient();
             Container.Bind<CommandCreatorBase<IAttackCommand>>()
             .To<AttackCommandCommandCreator>().AsTransient();
             Container.Bind<CommandCreatorBase<IMoveCommand>>()

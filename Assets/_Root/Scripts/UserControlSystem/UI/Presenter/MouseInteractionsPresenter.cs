@@ -1,9 +1,11 @@
 using Abstractions;
+using System.Data.SqlTypes;
 using System.Linq;
 using UniRx;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UserControlSystem;
 using UserControlSystem.UI.Model;
 using Zenject;
 
@@ -16,6 +18,7 @@ public class MouseInteractionsPresenter : MonoBehaviour
     [SerializeField] private Vector3Value _groundClicksRMB;
     [SerializeField] private AttackableValue _attackablesRMB;
     [SerializeField] private Transform _groundTransform;
+    [SerializeField] private HealableValue _healableValue;
     private Plane _groundPlane;
 
     [Inject]
@@ -50,6 +53,10 @@ public class MouseInteractionsPresenter : MonoBehaviour
             if (WeHit<IAttackable>(hits, out var attackable))
             {
                 _attackablesRMB.SetValue(attackable);
+}
+            if (WeHit<IHealable>(hits, out var healable))
+            {
+                _healableValue.SetValue(healable);
             }
             else if (_groundPlane.Raycast(ray, out var enter))
             {

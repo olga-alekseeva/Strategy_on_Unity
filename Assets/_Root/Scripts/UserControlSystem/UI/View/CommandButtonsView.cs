@@ -40,6 +40,9 @@ public class CommandButtonsView : MonoBehaviour
                 .Add(typeof(ICommandExecutor<ISetRallyPointCommand>), _setRallyButton);
             _buttonsByExecutorType
            .Add(typeof(ICommandExecutor<IHealCommand>), _healButton);
+            _buttonsByExecutorType
+          .Add(typeof(ICommandExecutor<IProduceHealUnitCommand>), _produceUnitButton);
+
 
         }
 

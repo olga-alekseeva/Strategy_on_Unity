@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Core
 {
-    public class MainUnit : MonoBehaviour, ISelectable, IAttackable, IUnit, IDamageDealer, IAutomaticAttacker
+    public class MainUnit : MonoBehaviour, ISelectable, IAttackable, IUnit, IDamageDealer, IAutomaticAttacker, IHealable
     {
         public float Health => _health;
         public float MaxHealth => _maxHealth;
@@ -13,6 +13,7 @@ namespace Core
         public Sprite Icon => _icon;
         public int Damage => _damage;
         public float VisionRadius => _visionRadius;
+        public Transform Transform => transform;
 
         [SerializeField] private float _visionRadius;
         [SerializeField] private Animator _animator;
@@ -51,6 +52,10 @@ namespace Core
         {
             await _stopCommand.ExecuteSpecificCommand(new StopCommand());
             Destroy(gameObject);
+        }
+        public void Heal(int amount)
+        {
+            Debug.Log("fighter healing");
         }
     }
 }

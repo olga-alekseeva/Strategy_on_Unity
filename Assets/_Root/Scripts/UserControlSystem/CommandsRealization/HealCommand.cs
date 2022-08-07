@@ -6,9 +6,9 @@ namespace Core
 
     public class HealCommand : IHealCommand
     {
-        public IAttackable Target { get; }
+        public IHealable Target { get; }
 
-        public HealCommand(IAttackable target)
+        public HealCommand(IHealable target)
         {
             Target = target;
         }

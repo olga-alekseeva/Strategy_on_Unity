@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using UniRx;
 using UnityEngine;
 using Zenject;
+using Core;
 
 public class HealerCommandsQueue : MonoBehaviour, ICommandsQueue
 {
@@ -57,5 +58,6 @@ public class HealerCommandsQueue : MonoBehaviour, ICommandsQueue
     public void Clear()
     {
         _innerCollection.Clear();
+        _stopCommandExecutor.ExecuteSpecificCommand(new StopCommand());
     }
 }

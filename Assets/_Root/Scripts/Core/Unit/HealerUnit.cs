@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Core
 {
-    public class HealerUnit : MonoBehaviour, ISelectable, IAttackable, IUnit, IAutomaticAttacker, IDamageDealer
+    public class HealerUnit : MonoBehaviour, ISelectable, IAttackable, IUnit, IAutomaticAttacker, IDamageDealer, IHealable
     {
         public float Health => _health;
         public float MaxHealth => _maxHealth;
@@ -16,7 +16,9 @@ namespace Core
 
         public int Damage => _damage;
 
-        [SerializeField] private float _visionRadius;
+        public Transform Transform => transform;
+
+        [SerializeField] private float _visionRadius = 8f;
         [SerializeField] private Animator _animator;
         [SerializeField] private StopCommandExecutor _stopCommand;
         [SerializeField] private float _maxHealth = 100;
@@ -46,9 +48,10 @@ namespace Core
             Destroy(gameObject);
         }
 
-        public void ReceiveHeal(int amount)
+      
+        public void Heal(int amount)
         {
-            throw new System.NotImplementedException();
+           Debug.Log("Heal");
         }
     }
 }
