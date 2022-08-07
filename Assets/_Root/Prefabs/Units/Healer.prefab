@@ -1871,7 +1871,8 @@ GameObject:
   - component: {fileID: 4156603560042869641}
   - component: {fileID: 2820925486551378286}
   - component: {fileID: 4349181172712089320}
-  - component: {fileID: 1886739422732939248}
+  - component: {fileID: 7091725205738162836}
+  - component: {fileID: 3313911744921546216}
   m_Layer: 0
   m_Name: Healer
   m_TagString: Untagged
@@ -2074,7 +2075,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 138417e0929923c419c453792bb0804a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackerParallelnfoUpdater: {fileID: 0}
+  _attackerParallelnfoUpdater: {fileID: 3313911744921546216}
   _factionMemberParallelInfoUpdater: {fileID: 8322686537834500054}
 --- !u!114 &8322686537834500054
 MonoBehaviour:
@@ -2125,7 +2126,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e0dd0842292f2045abd2f30f29749b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1886739422732939248
+--- !u!114 &7091725205738162836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6260438835159799948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df22503dfefc8e649909895235d1f74a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 6494439299141662572}
+  _stopCommandExecutor: {fileID: 2830842373306534383}
+  _stop: {fileID: 2830842373306534372}
+--- !u!114 &3313911744921546216
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

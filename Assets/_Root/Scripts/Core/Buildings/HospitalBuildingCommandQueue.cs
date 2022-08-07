@@ -8,7 +8,7 @@ using Zenject;
 namespace Core
 {
 
-public class HospitalBuildingCommandQueue : MonoBehaviour, ICommandsQueue
+public class HospitalBuildingCommandQueue : MainBuilding, ICommandsQueue
 {
         public ICommand CurrentCommand => default;
 
@@ -20,7 +20,7 @@ public class HospitalBuildingCommandQueue : MonoBehaviour, ICommandsQueue
         public async void EnqueueCommand(object command)
         {
             await _produceHealllUnitCommandExecutor.TryExecuteCommand(command);
-           // await _setRallyCommandExecutor.TryExecuteCommand(command);
+         //  await _setRallyCommandExecutor.TryExecuteCommand(command);
         }
     }
 }
